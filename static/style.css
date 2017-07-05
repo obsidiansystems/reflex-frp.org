@@ -35,11 +35,19 @@ body {
   padding: 0;
 }
 
+.sections {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: center;
+  align-content: center;
+}
+
 ul.sections {
     margin: 0 0 3rem 0;
     padding: 0.5rem;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     list-style: none;
     border-top: 1px solid #d1dadc;
