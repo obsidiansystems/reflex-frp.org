@@ -75,11 +75,11 @@ siteBody initRoute = do
   -- Place Font Awesome Icons in Footer
   elClass "div" "footer" $ do
     elAttr "a" rdirTwitter $ do
-      FA.icon FaTwitter def
+      FA.faIcon FaTwitter def
     elAttr "a" rdirGithub $ do
-      FA.icon FaGithub def
+      FA.faIcon FaGithub def
     elAttr "a" rdirReddit $ do
-      FA.icon FaReddit def
+      FA.faIcon FaReddit def
   return ()
   
 ----------------------Helper Functions-------------------------------
