@@ -57,7 +57,7 @@ siteBody initRoute = do
   rec
     pageSwitch <- elClass "div" "header" $ do
       elAttr "img" logo blank
-      mobileNavMenu $ navMenu active
+      mobileNavMenu (navMenu active) active 
 
     active <- prerender (routeToWidget initRoute >> return (constDyn initRoute))
                  (pathWidget $ \r -> do  
@@ -129,14 +129,15 @@ navMenu currentTab = do
                    ]
 
 -- | Hanslo: Make the mobile app Menu become the parent ul of the list items
-mobileNavMenu :: (DomBuilder t m, MonadFix m, MonadHold t m, PostBuild t m)=> m (Event t Route) -> m (Event t Route)
-mobileNavMenu items = do
+mobileNavMenu :: (DomBuilder t m, MonadFix m, MonadHold t m, PostBuild t m)=> m (Event t Route) -> Dynamic t Route -> m (Event t Route)
+mobileNavMenu items activeTab = do
   rec
     isOpen <- toggle False onClick
     let toggleOpen = sections <$> isOpen
     let onClick = domEvent Click mobileNav
     (mobileNav,widg) <- elDynAttr' "ul" toggleOpen $ do 
-      el "h3" $ text "Menu"
+      let selectedTitle = routeToTitle <$> activeTab
+      el "h3" $ dynText selectedTitle
       FA.faIcon' FaBars $ def {_faConfig_size = Size_Large}
       items
   return (widg)
