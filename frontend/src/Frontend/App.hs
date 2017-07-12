@@ -17,6 +17,8 @@ import Data.Map (Map)
 import Data.Text (Text)
 import Common.Route -- ^ used for navBar's Route data type 
 import Focus.JS.Prerender (Prerender, prerender)
+import Focus.JS.Window
+import Language.Javascript.JSaddle
 import Control.Monad.Fix
 
 import Focus.JS.FontAwesome as FA
@@ -46,8 +48,8 @@ siteHead = do
   return ()
 
 ------------------- <body></body> ----------------------------------------
-siteBody :: ( DomBuilder t m, MonadHold t m, MonadFix m, TriggerEvent t m, PostBuild t m
-            , PerformEvent t m, Prerender x m)
+siteBody :: (DomBuilder t m, MonadHold t m, MonadFix m, TriggerEvent t m, PostBuild t m
+            , PerformEvent t m, Prerender x m, MonadJSM (Performable m), MonadJSM m)
          => Route -> m ()
 siteBody initRoute = do 
   let links = [ ("Hackage", "https://hackage.haskell.org/package/reflex")
@@ -57,7 +59,15 @@ siteBody initRoute = do
   rec
     pageSwitch <- elClass "div" "header" $ do
       elAttr "img" logo blank
-      elClass "ul" "sections" $ navMenu active
+      elClass "ul" "sections" $ do 
+        bWindow <- askDomWindow -- ^ Hanslo: Get current window
+        currentWindowSize <- windowSize bWindow -- ^ Hanslo: Get current window size
+        let showMobileMenu = isProperDimension currentWindowSize -- ^ Hanslo: Get Bool about Window size
+        let toggleOpen = mobileMenu <$> showMobileMenu -- ^ Hanslo: toggle class and styling information based on Bool
+        elDynAttr "div" toggleOpen $ do -- ^ Hanslo: this will need to be dynamic depending on Window size
+          text "Menu"
+          FA.faIcon FaBars def
+        navMenu active
 
     active <- prerender (routeToWidget initRoute >> return (constDyn initRoute))
                  (pathWidget $ \r -> do  
@@ -118,6 +128,7 @@ navMenu currentTab = do
         let selected = demuxed currentTabDemux route
         let highlight = zipDynWith isActive currentTab selected
         el "li" $ do
+          -- ^ Hanslo: anchor tags will need a dynamic attribute to be hidden and unhidden
           (linkEl, _) <- elDynAttr' "a" (highlight) $ text (routeToTitle route)
           return (route <$ domEvent Click linkEl) 
   return $ leftmost events
@@ -154,6 +165,11 @@ routeToWidget r = case r of
      Route_Documentation -> documentation
      Route_FAQ -> faq
 
+-- | Hanslo: checks to see if screen width is <= 1024px
+isProperDimension :: Functor (Dynamic t) => Dynamic t (Int, Int) -> Dynamic t Bool
+isProperDimension dim = checkDimension <$> dim
+  where 
+    checkDimension (x,_) = x <= 1024
 ----------------------Element Attributes------------------------------
 metaDesc :: Map Text Text
 metaDesc = "name" =: "description" 
@@ -186,6 +202,10 @@ rdirReddit :: Map Text Text
 rdirReddit = "href" =: "http://reddit.com/r/reflexfrp"
            <> "title" =: "reddit"
 
+-- Hanslo: changed this to hide and unhide itself
+mobileMenu :: Bool -> Map Text Text
+mobileMenu False = "style" =: "display: none;"
+mobileMenu True = "style" =: "display: block;"
 
 ---------------------Widgets to switch to/from-----------------------
 home :: (DomBuilder t m) => m ()

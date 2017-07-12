@@ -73,7 +73,184 @@ ul.sections li a {
     ul.sections li a:hover, ul.sections li a:focus {
         color: #E6182E;
     }
-    
+
+/*--------Mobile NavBar Styling--------------------*/
+@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+  .header {
+    width: 100%;
+  }
+  .header ul {
+    width: 100%;
+    /*display: none; /*this may cause problems*/
+  }
+  .header.align-center > ul {
+    text-align: left;
+  }
+  .header ul li {
+    width: 100%;
+    border-top: 1px solid rgba(120, 120, 120, 0.2);
+  }
+  .header ul ul li,
+  .header li:hover > ul > li {
+    height: auto;
+  }
+  .header ul.sections li a,
+  .header ul ul li a {
+    border-bottom: 0;
+  }
+  .header > ul > li {
+    float: none;
+  }
+  .header ul ul li a {
+    padding-left: 25px;
+  }
+  .header ul ul ul li a {
+    padding-left: 35px;
+  }
+  .header ul ul li a {
+    color: #dddddd;
+    background: none;
+  }
+  .header ul ul li:hover > a,
+  .header ul ul li.active > a {
+    color: #ffffff;
+  }
+  .header ul ul,
+  .header ul ul ul,
+  .header.align-right ul ul {
+    position: relative;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+  .header > ul > li.has-sub > a:after,
+  .header > ul > li.has-sub > a:before,
+  .header ul ul > li.has-sub > a:after,
+  .header ul ul > li.has-sub > a:before {
+    display: none;
+  }
+  .header #menu-button {
+    display: block;
+    padding: 17px;
+    color: #dddddd;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .header #menu-button:after {
+    position: absolute;
+    top: 22px;
+    right: 17px;
+    display: block;
+    height: 4px;
+    width: 20px;
+    border-top: 2px solid #dddddd;
+    border-bottom: 2px solid #dddddd;
+    content: '';
+  }
+  .header #menu-button:before {
+    position: absolute;
+    top: 16px;
+    right: 17px;
+    display: block;
+    height: 2px;
+    width: 20px;
+    background: #dddddd;
+    content: '';
+  }
+.header #menu-button.menu-opened:after {
+    top: 23px;
+    border: 0;
+    height: 2px;
+    width: 15px;
+    background: #ffffff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .header #menu-button.menu-opened:before {
+    top: 23px;
+    background: #ffffff;
+    width: 15px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .header .submenu-button {
+    position: absolute;
+    z-index: 99;
+    right: 0;
+    top: 0;
+    display: block;
+    border-left: 1px solid rgba(120, 120, 120, 0.2);
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+  }
+  .header .submenu-button.submenu-opened {
+    background: #262626;
+  }
+  .header ul ul .submenu-button {
+    height: 34px;
+    width: 34px;
+  }
+  .header .submenu-button:after {
+    position: absolute;
+    top: 22px;
+    right: 19px;
+    width: 8px;
+    height: 2px;
+    display: block;
+    background: #dddddd;
+    content: '';
+  }
+  .header ul ul .submenu-button:after {
+    top: 15px;
+    right: 13px;
+  }
+  .header .submenu-button.submenu-opened:after {
+    background: #ffffff;
+  }
+  .header .submenu-button:before {
+    position: absolute;
+    top: 19px;
+    right: 22px;
+    display: block;
+    width: 2px;
+    height: 8px;
+    background: #dddddd;
+    content: '';
+  }
+  .header ul ul .submenu-button:before {
+    top: 12px;
+    right: 16px;
+  }
+  .header .submenu-button.submenu-opened:before {
+    display: none;
+	}
+
+	/*-_-*/
+	ul.sections {
+		display: inline-grid; 
+	}
+	
+	.header ul li {
+		border-top: none;
+	}
+	
+	ul.sections li + li {
+		border-left: none;
+	}
+
+}
+/*--------Mobile NavBar Styling END--------------------*/
+
 .main {
     margin: auto;
     width: 650px;
@@ -96,7 +273,7 @@ ul.sections li a {
 }
 
 /*---Responsive Design-----*/
-
+/*
 @media (min-width: 362px) and (max-width: 600px)  {
 
   .logo {
@@ -149,3 +326,4 @@ ul.sections li a {
   }
 
 }
+*/ 
