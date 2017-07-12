@@ -57,7 +57,7 @@ siteBody initRoute = do
   rec
     pageSwitch <- elClass "div" "header" $ do
       elAttr "img" logo blank
-      elClass "ul" "sections" $ navMenu active
+      mobileNavMenu $ navMenu active
 
     active <- prerender (routeToWidget initRoute >> return (constDyn initRoute))
                  (pathWidget $ \r -> do  
@@ -127,6 +127,23 @@ navMenu currentTab = do
                    , Route_Documentation
                    , Route_FAQ
                    ]
+
+-- | Hanslo: Make the mobile app Menu become the parent ul of the list items
+mobileNavMenu :: (DomBuilder t m, MonadFix m, MonadHold t m, PostBuild t m)=> m (Event t Route) -> m (Event t Route)
+mobileNavMenu items = do
+  rec
+    isOpen <- toggle False onClick
+    let toggleOpen = sections <$> isOpen
+    let onClick = domEvent Click mobileNav
+    (mobileNav,widg) <- elDynAttr' "ul" toggleOpen $ do 
+      el "h3" $ text "Menu"
+      FA.faIcon' FaBars $ def {_faConfig_size = Size_Large}
+      items
+  return (widg)
+
+sections :: Bool -> Map Text Text 
+sections True = "class" =: "sections"
+sections False = "class" =: "noshow"
 
 isActive :: Route -> Bool -> Map Text Text
 isActive ia isit = "id" =: (routeToTitle ia) 

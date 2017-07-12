@@ -73,7 +73,8 @@ ul.sections li a {
     ul.sections li a:hover, ul.sections li a:focus {
         color: #E6182E;
     }
-    
+
+   
 .main {
     margin: auto;
     width: 650px;
@@ -95,6 +96,52 @@ ul.sections li a {
   color: #E6182E;
 }
 
+.noshow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: center;
+  align-content: center;
+}
+
+ul.noshow {
+    margin: 0 0 3rem 0;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    border-top: 1px solid #d1dadc;
+    border-bottom: 1px solid #d1dadc;
+}
+
+ul.noshow li + li {
+  border-left: 1px solid #ecf1f3;
+}
+
+ul.noshow li a {
+    padding: 0rem 0.3rem;
+    margin: 0.3rem 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: flex-start;
+    color: #333;
+    text-transform: uppercase;
+    border-bottom: 4px solid transparent;
+    cursor: pointer;
+}
+
+    ul.noshow li a:hover, ul.noshow li a:focus {
+        color: #E6182E;
+    }
+
+ul.noshow h3 {
+  display: none;
+}
+
+ul.noshow i {
+  display: none;
+}
 /*---Responsive Design-----*/
 
 @media (min-width: 362px) and (max-width: 600px)  {
@@ -124,11 +171,44 @@ ul.sections li a {
   ul.sections li a {
     display: -webkit-inline-box;
   }
+  
+  ul.sections h3 {
+    display: none;
+  }
+  
+  ul.sections i {
+    display: block;
+    float: right;
+  }
+
   .main {
     margin: 0; 
     padding-right: 4%;
     padding-left: 4%;
     width: 100%;
+  }
+
+  ul.noshow {
+      margin: 0 0 3rem 0;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      border-top: 1px solid #d1dadc;
+      border-bottom: 1px solid #d1dadc;
+  }
+  
+  ul.noshow li {
+    display: none;
+  }
+
+  ul.noshow h3 {
+    display: inline;
+    margin-right: 40%;
+  }
+  
+  ul.noshow i {
+    display: inline-block;
   }
 }
 
@@ -159,9 +239,40 @@ ul.sections li a {
     display: -webkit-inline-box;
   }
 
- 
+   ul.sections h3 {
+    display: none;
+  }
+  
+  ul.sections i {
+    display: block;
+    float: right;
+  }
+
   .main {
     width: inherit;
+  }
+  
+  ul.noshow {
+      margin: 0 0 3rem 0;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      border-top: 1px solid #d1dadc;
+      border-bottom: 1px solid #d1dadc;
+  }
+  
+  ul.noshow li {
+    display: none;
+  }
+
+  ul.noshow h3 {
+    display: inline;
+    margin-right: 40%;
+  }
+  
+  ul.noshow i {
+    display: inline-block;
   }
 
   .footer {
