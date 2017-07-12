@@ -105,9 +105,25 @@ ul.sections li a {
   }
 
   ul.sections {
-    display: -webkit-inline-box;;
+    display: block;
+  }
+
+  .header ul li {
+    border-top: none;
   }
   
+  ul.sections li {
+    display: block;
+    text-align: center;
+  }
+  
+  ul.sections li + li {
+    border-left: none; 
+  }
+
+  ul.sections li a {
+    display: -webkit-inline-box;
+  }
   .main {
     margin: 0; 
     padding-right: 4%;
@@ -120,28 +136,35 @@ ul.sections li a {
 
   .logo {
     width: 80%;
-    margin-left: 35%;
   }
 
   ul.sections {
-    display: -webkit-inline-box;;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style: none;
-    border-top: 1px solid #d1dadc;
-    border-bottom: 1px solid #d1dadc;
-  } 
+    display: block;
+  }
+
+  .header ul li {
+    border-top: none;
+  }
   
+  ul.sections li {
+    display: block;
+    text-align: center;
+  }
+  
+  ul.sections li + li {
+    border-left: none; 
+  }
+
+  ul.sections li a {
+    display: -webkit-inline-box;
+  }
+
+ 
   .main {
-    margin: 0; 
-    margin-left: 38%;
-    padding-right: 4%;
-    padding-left: 4%;
-    width: 100%;
+    width: inherit;
   }
 
   .footer {
-    padding-left: 75%;
   }
 
   .footer i {
