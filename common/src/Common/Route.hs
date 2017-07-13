@@ -8,11 +8,11 @@ import Data.Maybe
 
 import Reflex.Dom.Path
 
---Custom data type that corresponds to a site's navBar
+-- | Custom data type that corresponds to a site's navBar
 data Route = Route_Home | Route_Tutorials | Route_Examples | Route_Documentation | Route_FAQ
   deriving (Show, Eq, Ord)
 
---Outputs text to be appended to url
+-- | Outputs text to be appended to url
 routeToUrl :: Route -> Text
 routeToUrl r = case r of
  Route_Home -> "/home"
@@ -21,12 +21,12 @@ routeToUrl r = case r of
  Route_Documentation -> "/documentation" 
  Route_FAQ -> "/faq"
 
---Look up if a given url extension exists within a list of routes
+-- | Look up if a given url extension exists within a list of routes
 urlToRoute :: Text -> Maybe Route
 urlToRoute path = Map.lookup path routes
   where routes = Map.fromList $ fmap (\r ->(routeToUrl r, r)) [Route_Home , Route_Tutorials , Route_Examples , Route_Documentation , Route_FAQ]
 
--- instance of class from Frontend.Route
+--  | instance of class from Frontend.Route
 instance IsPath Route where 
   pathToText = routeToUrl 
   textToPath = fromMaybe Route_Home . urlToRoute

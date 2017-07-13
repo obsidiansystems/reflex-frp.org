@@ -25,11 +25,12 @@ import Web.FontAwesomeType
 ------------------- <head></head> ----------------------------------------
 siteHead :: DomBuilder t m => m ()
 siteHead = do
-  el "title" $ text "Reflex FRP"
-  elAttr "meta" metaDesc blank
-  elAttr "meta" metaKeywords blank
-  elAttr "meta" viewport blank
-  fontAwesomeCDN
+  el "title" $ text "Reflex FRP"      -- ^ add Page title
+  elAttr "meta" metaDesc blank        -- ^ add meta-data description
+  elAttr "meta" metaKeywords blank    -- ^ add meta-data keywords
+  elAttr "meta" viewport blank        -- ^ add meta-data viewport
+  fontAwesomeCDN                      -- ^ link MaxCDN FontAwesome
+  -- | add various favIcon links
   faviconLinker "icon" "image/png" "16x16" "img/favicon-16x16.png"
   faviconLinker "icon" "image/png" "32x32" "img/favicon-32x32.png" 
   faviconLinker "apple-touch-icon" "/" "57x57" "img/apple-touch-icon-57x57.png"
@@ -41,30 +42,34 @@ siteHead = do
   faviconLinker "apple-touch-icon" "/" "144x144" "img/apple-touch-icon-144x144.png"
   faviconLinker "apple-touch-icon" "/" "152x152" "img/apple-touch-icon-152x152.png"
   faviconLinker "icon" "image/png" "img/favicon-196x196.png" "196x196"
-  styleSheet "style.css"
-  styleSheet "font.css"
+  styleSheet "style.css"              -- ^ link css stylesheet
+  styleSheet "font.css"               -- ^ link css fonts
   return ()
 
 ------------------- <body></body> ----------------------------------------
+-- | takes the initial Route of the website and creates a widget
 siteBody :: ( DomBuilder t m, MonadHold t m, MonadFix m, TriggerEvent t m, PostBuild t m
             , PerformEvent t m, Prerender x m)
          => Route -> m ()
 siteBody initRoute = do 
+  -- | List of tupled Haskell community links
   let links = [ ("Hackage", "https://hackage.haskell.org/package/reflex")
               , ("irc.freenode.net #reflex-frp", "http://webchat.freenode.net/?channels=%23reflex-frp&uio=d4")
               ]
 
   rec
     pageSwitch <- elClass "div" "header" $ do
-      elAttr "img" logo blank
-      mobileNavMenu (navMenu active) active 
+      elAttr "img" logo blank                 -- ^ add site logo header
+      mobileNavMenu (navMenu active) active   -- ^ add nav bar nested within responsive mobile nav bar funciton
 
+    -- | show active widget until a different route is chosen to be
+    -- prerendered, server-side, and shown 
     active <- prerender (routeToWidget initRoute >> return (constDyn initRoute))
                  (pathWidget $ \r -> do  
                     routeToWidget r
                     return (pageSwitch, r))
 
-  -- Create a list of links from a list of tuples
+  -- | Create a list of Haskell community links from a list of tuples
   elClass "div" "main" $ do 
     el "p" $ text "Check us out on Hackage or join the community IRC chat!"
     forM_ links $ \pair -> do
@@ -72,7 +77,7 @@ siteBody initRoute = do
       el "br" $ return ()
   el "br" blank
 
-  -- Place Font Awesome Icons in Footer
+  -- | Place Font Awesome Icons in footer <div> 
   elClass "div" "footer" $ do
     elAttr "a" rdirTwitter $ do
       FA.faIcon FaTwitter def
@@ -84,18 +89,12 @@ siteBody initRoute = do
   
 ----------------------Helper Functions-------------------------------
 
---styleSheet & headLink are functions to add links to html <head>
+-- | styleSheet are functions to add links to html <head>
 styleSheet :: DomBuilder t m => Text -> m ()
 styleSheet myLink = elAttr "link" (Map.fromList [
     ("rel", "stylesheet"),
     ("type", "text/css"),
     ("href", myLink)
-  ]) $ return ()
-
-headLink :: DomBuilder t m => Text -> m ()
-headLink url = elAttr "link" (Map.fromList [
-    ("rel", "stylesheet"),
-    ("href", url)
   ]) $ return ()
 
 -- TODO: make this function more type safe.
@@ -110,16 +109,18 @@ faviconLinker r t s h = elAttr "link" attribs blank
              <> "href" =: h
 
   
---Nav Bar generator produces click-able Widget Events
+-- | Nav Bar generator produces click-able Widget Events
 navMenu :: (DomBuilder t m, MonadHold t m, MonadFix m, PostBuild t m) => Dynamic t Route -> m (Event t Route)
 navMenu currentTab = do
-  let currentTabDemux = demux currentTab
+  let currentTabDemux = demux currentTab      -- ^ change type (Dynamic t Route) to (Demux t Route)
   rec events <- forM sections $ \route -> do
-        let selected = demuxed currentTabDemux route
-        let highlight = zipDynWith isActive currentTab selected
+        let selected = demuxed currentTabDemux route -- ^ compare currentTab and section
+        let highlight = zipDynWith isActive currentTab selected -- ^ if selected is True, highlight currentTab
         el "li" $ do
+          -- | Get anchor tag element with Route name and corresponding "active:" styling
           (linkEl, _) <- elDynAttr' "a" (highlight) $ text (routeToTitle route)
-          return (route <$ domEvent Click linkEl) 
+          return (route <$ domEvent Click linkEl)  -- ^ get Event t Route anchor element
+  -- | send clicked Route to \route function
   return $ leftmost events
   where sections = [ Route_Home
                    , Route_Tutorials
@@ -128,24 +129,31 @@ navMenu currentTab = do
                    , Route_FAQ
                    ]
 
--- | Hanslo: Make the mobile app Menu become the parent ul of the list items
+--TODO some of the style changes that are within the style.css file may want
+--to be integrated into the function somehow in order to avoid fingering
+--through css code to figure out how to get this function to be useful
+--straight out of the box.
+-- | Make the mobile app Menu become the parent ul of the li generated from
+-- 'navMenu'
 mobileNavMenu :: (DomBuilder t m, MonadFix m, MonadHold t m, PostBuild t m)=> m (Event t Route) -> Dynamic t Route -> m (Event t Route)
 mobileNavMenu items activeTab = do
   rec
-    isOpen <- toggle False onClick
-    let toggleOpen = sections <$> isOpen
-    let onClick = domEvent Click mobileNav
-    (mobileNav,widg) <- elDynAttr' "ul" toggleOpen $ do 
-      let selectedTitle = routeToTitle <$> activeTab
-      el "h3" $ dynText selectedTitle
-      FA.faIcon' FaBars $ def {_faConfig_size = Size_Large}
-      items
+    isOpen <- toggle False onClick                      -- ^ add toggle-able Boolean Event when clicked
+    let toggleOpen = section <$> isOpen                 -- ^ fmap Boolean to 'section'
+    let onClick = domEvent Click mobileNav              -- ^ add Event target
+    (mobileNav,widg) <- elDynAttr' "ul" toggleOpen $ do -- ^ get a tuple with (EventResult, m())
+      let selectedTitle = routeToTitle <$> activeTab    -- ^ set Title for Responsive Menu
+      el "h3" $ dynText selectedTitle                   -- ^ add h3 with Dynmically changing title
+      FA.faIcon' FaBars $ def {_faConfig_size = Size_Large} -- ^ add FontAwsome Menu Icon with Large size configs added
+      items                                             -- ^ add contents of whatever widget is passed as an arg
   return (widg)
 
-sections :: Bool -> Map Text Text 
-sections True = "class" =: "sections"
-sections False = "class" =: "noshow"
+-- | helper function for mobileNavMenu
+section :: Bool -> Map Text Text 
+section True = "class" =: "sections"
+section False = "class" =: "noshow"
 
+-- | helper function for navMenu, underlines active Route
 isActive :: Route -> Bool -> Map Text Text
 isActive ia isit = "id" =: (routeToTitle ia) 
            <> "style" =: ("border-bottom: " <> active isit)
@@ -154,7 +162,7 @@ isActive ia isit = "id" =: (routeToTitle ia)
     active False = "none;"
     
 
---Produces Text for navMenu, takes a route as an arguement
+-- | Produces Text for navMenu, takes a route as an arguement
 routeToTitle :: Route -> Text
 routeToTitle r = case r of  
      Route_Home -> "Home"
@@ -163,7 +171,7 @@ routeToTitle r = case r of
      Route_Documentation -> "Documentation" 
      Route_FAQ -> "FAQ"
 
---Receives a route and returns it's corresponding widget
+-- | Receives a route and returns it's corresponding widget
 routeToWidget :: DomBuilder t m => Route -> m ()  
 routeToWidget r = case r of
      Route_Home -> home
@@ -188,7 +196,6 @@ viewport = "name" =: "viewport"
 logo :: Map Text Text
 logo = "class" =: "logo" 
         <> "src" =: "img/REFLEX.png" 
-       -- <> "style" =: "height: 20%;width: 30%;margin: auto;display: block;padding: 0;"
 
 icon :: Map Text Text
 icon = "rel" =: "shortcut icon"
