@@ -15,6 +15,7 @@ import Data.Monoid
 import Control.Monad
 import Data.Map (Map)
 import Data.Text (Text)
+import Data.Text as Text
 import Common.Route -- ^ used for navBar's Route data type 
 import Focus.JS.Prerender (Prerender, prerender)
 import Control.Monad.Fix
@@ -142,8 +143,9 @@ mobileNavMenu items activeTab = do
     let toggleOpen = section <$> isOpen                 -- ^ fmap Boolean to 'section'
     let onClick = domEvent Click mobileNav              -- ^ add Event target
     (mobileNav,widg) <- elDynAttr' "ul" toggleOpen $ do -- ^ get a tuple with (EventResult, m())
-      let selectedTitle = routeToTitle <$> activeTab    -- ^ set Title for Responsive Menu
-      el "h3" $ dynText selectedTitle                   -- ^ add h3 with Dynmically changing title
+      let selectedTitle = toUpper . routeToTitle <$> activeTab    -- ^ set Title for Responsive Menu
+      el "div" $ text " "                              -- ^ added this div for flexbox fix (temp fix)
+      el "p" $ dynText selectedTitle                   -- ^ add h3 with Dynmically changing title
       FA.faIcon' FaBars $ def {_faConfig_size = Size_Large} -- ^ add FontAwsome Menu Icon with Large size configs added
       items                                             -- ^ add contents of whatever widget is passed as an arg
   return (widg)

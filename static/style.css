@@ -74,7 +74,7 @@ ul.sections li a {
         color: #E6182E;
     }
 
-ul.sections h3 {
+ul.sections p {
   display: none;
 }
 
@@ -94,7 +94,7 @@ ul.sections i {
 
 .footer i {
   color: #453B3B;
-  padding-left: 3.5%;
+  padding-left: 1.2%;
   font-size: 1.2em;
 }
 
@@ -141,7 +141,7 @@ ul.noshow li a {
         color: #E6182E;
     }
 
-ul.noshow h3 {
+ul.noshow p {
   display: none;
 }
 
@@ -177,7 +177,7 @@ ul.noshow i {
     display: -webkit-inline-box;
   }
   
-  ul.sections h3 {
+  ul.sections p {
     display: none;
   }
   
@@ -197,7 +197,7 @@ ul.noshow i {
       margin: 0 0 3rem 0;
       padding: 0.5rem;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       list-style: none;
       border-top: 1px solid #d1dadc;
       border-bottom: 1px solid #d1dadc;
@@ -207,15 +207,19 @@ ul.noshow i {
     display: none;
   }
 
-  ul.noshow h3 {
+  ul.noshow p {
     display: inline;
-    margin-right: 40%;
     margin-top: 0; 
     margin-bottom: 0;
+    align-self: center;
   }
   
   ul.noshow i {
     display: inline-block;
+  }
+
+  .footer i {
+    padding-left: 3.5%;
   }
 }
 
@@ -246,7 +250,7 @@ ul.noshow i {
     display: -webkit-inline-box;
   }
 
-   ul.sections h3 {
+   ul.sections p {
     display: none;    
     margin-top: 0; 
     margin-bottom: 0;
@@ -265,7 +269,7 @@ ul.noshow i {
       margin: 0 0 3rem 0;
       padding: 0.5rem;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       list-style: none;
       border-top: 1px solid #d1dadc;
       border-bottom: 1px solid #d1dadc;
@@ -275,11 +279,11 @@ ul.noshow i {
     display: none;
   }
 
-  ul.noshow h3 {
+  ul.noshow p {
     display: inline;
-    margin-right: 40%;  
     margin-top: 0; 
     margin-bottom: 0;
+    align-self: center;
   }
   
   ul.noshow i {
@@ -290,7 +294,7 @@ ul.noshow i {
   }
 
   .footer i {
-    padding-left: 9%;
+    padding-left: 7%;
   }
 
 }
