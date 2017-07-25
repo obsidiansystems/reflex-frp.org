@@ -24,6 +24,7 @@ import Focus.JS.FontAwesome as FA
 import Web.FontAwesomeType
 import Reflex.Dom.Path
 
+-- This class will have to go elsewhere...
 class WebRoute a where 
   routeToTitle :: a -> Text
   routeToUrl :: a -> Text
