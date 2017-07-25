@@ -12,16 +12,15 @@ import Reflex.Dom.Path
 
 import qualified Data.Map as Map
 import Data.Monoid
-import Control.Monad
 import Data.Map (Map)
 import Data.Text (Text)
-import Data.Text as Text
 import Common.Route -- ^ used for navBar's Route data type 
-import Focus.JS.Prerender (Prerender, prerender)
 import Control.Monad.Fix
+import Control.Monad
 
 import Focus.JS.FontAwesome as FA
 import Web.FontAwesomeType
+--import Frontend.Kiss
 
 ------------------- <head></head> ----------------------------------------
 siteHead :: DomBuilder t m => m ()
@@ -49,7 +48,40 @@ siteHead = do
 
 ------------------- <body></body> ----------------------------------------
 -- | takes the initial Route of the website and creates a widget
-siteBody :: ( DomBuilder t m, MonadHold t m, MonadFix m, TriggerEvent t m, PostBuild t m
+siteBody :: (DomBuilder t m, MonadHold t m, MonadFix m, TriggerEvent t m, PostBuild t m
+            , PerformEvent t m, Prerender x m, WebRoute Route, IsPath Route, Ord Route)
+            => Route -> m ()
+siteBody initRoute = do 
+  bodyGen siteLogo siteRoutes initRoute  
+  elClass "div" "main" $ do 
+    el "p" $ text "Check us out on Hackage or join the community IRC chat!"
+    forM_ links $ \pair -> do
+      elAttr "a" ("href" =: (snd pair)) $ text (fst pair)
+      el "br" $ return ()
+  el "br" blank
+
+  -- | Place Font Awesome Icons in footer <div> 
+  elClass "div" "footer" $ do
+    elAttr "a" rdirTwitter $ do
+      FA.faIcon FaTwitter def
+    elAttr "a" rdirGithub $ do
+      FA.faIcon FaGithub def
+    elAttr "a" rdirReddit $ do
+      FA.faIcon FaReddit def
+
+  where 
+    siteLogo = "img/REFLEX.png"
+    siteRoutes = [ Route_Home
+                 , Route_Tutorials
+                 , Route_Examples 
+                 , Route_Documentation
+                 , Route_FAQ ]
+    links = [ ("Hackage", "https://hackage.haskell.org/package/reflex")
+              , ("irc.freenode.net #reflex-frp", "http://webchat.freenode.net/?channels=%23reflex-frp&uio=d4")
+              ]
+
+
+{-siteBody :: ( DomBuilder t m, MonadHold t m, MonadFix m, TriggerEvent t m, PostBuild t m
             , PerformEvent t m, Prerender x m)
          => Route -> m ()
 siteBody initRoute = do 
@@ -87,7 +119,7 @@ siteBody initRoute = do
     elAttr "a" rdirReddit $ do
       FA.faIcon FaReddit def
   return ()
-  
+ -} 
 ----------------------Helper Functions-------------------------------
 
 -- | styleSheet are functions to add links to html <head>
@@ -109,7 +141,7 @@ faviconLinker r t s h = elAttr "link" attribs blank
              <> "size" =: s
              <> "href" =: h
 
-  
+{-  
 -- | Nav Bar generator produces click-able Widget Events
 navMenu :: (DomBuilder t m, MonadHold t m, MonadFix m, PostBuild t m) => Dynamic t Route -> m (Event t Route)
 navMenu currentTab = do
@@ -129,13 +161,14 @@ navMenu currentTab = do
                    , Route_Documentation
                    , Route_FAQ
                    ]
-
+-}
 --TODO some of the style changes that are within the style.css file may want
 --to be integrated into the function somehow in order to avoid fingering
 --through css code to figure out how to get this function to be useful
 --straight out of the box.
 -- | Make the mobile app Menu become the parent ul of the li generated from
 -- 'navMenu'
+{-
 mobileNavMenu :: (DomBuilder t m, MonadFix m, MonadHold t m, PostBuild t m)=> m (Event t Route) -> Dynamic t Route -> m (Event t Route)
 mobileNavMenu items activeTab = do
   rec
@@ -149,12 +182,13 @@ mobileNavMenu items activeTab = do
       FA.faIcon' FaBars $ def {_faConfig_size = Size_Large} -- ^ add FontAwsome Menu Icon with Large size configs added
       items                                             -- ^ add contents of whatever widget is passed as an arg
   return (widg)
-
+-}
 -- | helper function for mobileNavMenu
 section :: Bool -> Map Text Text 
 section True = "class" =: "sections"
 section False = "class" =: "noshow"
 
+{-
 -- | helper function for navMenu, underlines active Route
 isActive :: Route -> Bool -> Map Text Text
 isActive ia isit = "id" =: (routeToTitle ia) 
@@ -163,8 +197,9 @@ isActive ia isit = "id" =: (routeToTitle ia)
     active True = "4px solid #d4272a;"
     active False = "none;"
     
-
+-}
 -- | Produces Text for navMenu, takes a route as an arguement
+{-
 routeToTitle :: Route -> Text
 routeToTitle r = case r of  
      Route_Home -> "Home"
@@ -181,7 +216,7 @@ routeToWidget r = case r of
      Route_Examples -> examples
      Route_Documentation -> documentation
      Route_FAQ -> faq
-
+-}
 ----------------------Element Attributes------------------------------
 metaDesc :: Map Text Text
 metaDesc = "name" =: "description" 
@@ -213,52 +248,3 @@ rdirReddit :: Map Text Text
 rdirReddit = "href" =: "http://reddit.com/r/reflexfrp"
            <> "title" =: "reddit"
 
-
----------------------Widgets to switch to/from-----------------------
-home :: (DomBuilder t m) => m ()
-home = elClass "div" "main" $ do
-         elClass "h3" "title" $ text "Practical Functional Reactive Programming"
-         elClass "p" "class" $ text "Reflex is an fully-deterministic, higher-order Functional Reactive Programming (FRP) interface and an engine that efficiently implements that interface."
-
-
-tutorials :: (DomBuilder t m) => m ()
-tutorials = elClass "div" "main" $ do
-    elClass "h3" "title" $ text "Tutorials"
-    el "ol" $ do
-      el "li" $ do 
-        el "label" $ text "Installation: "
-        elAttr "a" ("href" =: "https://github.com/reflex-frp/reflex-platform/blob/develop/README.md") $ text "setup-instructions" 
-      el "li" $ do 
-        el "label" $ text "Beginner Friendly Tutorial: "
-        elAttr "a" ("href" =: "https://github.com/hansroland/reflex-dom-inbits/blob/master/tutorial.md") $ text "reflex-dom-inbits" 
-
-
-
-examples :: (DomBuilder t m) => m ()
-examples = elClass "div" "main" $ do
-     elClass "h3" "title" $ text "Check Out Some Example Code"
-     el "ul" $ do
-      el "li" $ do 
-        el "label" $ text "Basic ToDo List: "
-        elAttr "a" ("href" =: "https://github.com/reflex-frp/reflex-examples/blob/master/BasicTodo/BasicTodo.hs") $ text "See Code Here" 
-      el "li" $ do 
-        el "label" $ text "JSON API - NASA Pic of the Day: "
-        elAttr "a" ("href" =: "https://github.com/reflex-frp/reflex-examples/blob/master/nasa-pod/workshop.hs") $ text "See Code Here" 
-
-
-documentation :: (DomBuilder t m) => m ()
-documentation = elClass "div" "main" $ do
-    elClass "h3" "title" $ text "Refreshing Reflex Documentation"
-    el "ul" $ do
-      el "li" $ do 
-        el "label" $ text "Reflex Basic Documentation: "
-        elAttr "a" ("href" =: "http://reflex-frp.readthedocs.io/en/latest/architecture.html#overview-of-reflex-basics") $ text "View Here" 
-      el "li" $ do 
-        el "label" $ text "Quick Reference: " 
-        elAttr "a" ("href" =: "https://github.com/reflex-frp/reflex-dom/blob/develop/Quickref.md") $ text "View Here" 
-
-
-faq :: (DomBuilder t m) => m ()
-faq = elClass "div" "main" $ do
-            elClass "h3" "title" $ text "FAQ"
-            el "p" $ text "FAQ questions coming soon! For now, feel free to ask questions within the Reflex-FRP IRC chat provided below. Thank you!"

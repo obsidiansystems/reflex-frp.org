@@ -11,10 +11,12 @@ html {
     font-family: 'PT Sans', helvetica, sans-serif;
     font-weight: 400;
     overflow: hidden;
+    height: 100%;
 }
 
 body {
   height: 100%;
+  /*text-align: center;*/
 }
 
 .header h1 {
@@ -52,6 +54,7 @@ ul.sections {
     list-style: none;
     border-top: 1px solid #d1dadc;
     border-bottom: 1px solid #d1dadc;
+    width: 100%;
 }
 
 ul.sections li + li {
@@ -71,7 +74,7 @@ ul.sections li a {
 }
 
     ul.sections li a:hover, ul.sections li a:focus {
-        color: #E6182E;
+        color: #D92323;
     }
 
 ul.sections p {
@@ -90,6 +93,9 @@ ul.sections i {
 .footer {
   text-align: center;
   margin: 0 auto;
+	position: absolute;
+	bottom: 6%;
+	width: 100%;
 }
 
 .footer i {
@@ -99,7 +105,7 @@ ul.sections i {
 }
 
 .footer i:hover {
-  color: #E6182E;
+  color: #D92323;
 }
 
 .noshow {
@@ -119,6 +125,7 @@ ul.noshow {
     list-style: none;
     border-top: 1px solid #d1dadc;
     border-bottom: 1px solid #d1dadc;
+    width: 100%;
 }
 
 ul.noshow li + li {
@@ -150,87 +157,30 @@ ul.noshow i {
 }
 /*---Responsive Design-----*/
 
-@media (min-width: 362px) and (max-width: 600px)  {
+@media (min-width: 601px) and (max-width: 768px) {
 
   .logo {
     width: 70%;
   }
 
+  div.sections {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.1);
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+  }
+
   ul.sections {
     display: block;
-  }
-
-  .header ul li {
-    border-top: none;
-  }
-  
-  ul.sections li {
-    display: block;
-    text-align: center;
-  }
-  
-  ul.sections li + li {
-    border-left: none; 
-  }
-
-  ul.sections li a {
-    display: -webkit-inline-box;
-  }
-  
-  ul.sections p {
-    display: none;
-  }
-  
-  ul.sections i {
-    display: block;
-    float: right;
-  }
-
-  .main {
-    margin: 0; 
-    padding-right: 4%;
-    padding-left: 4%;
+    background-color: white;
     width: 100%;
-  }
+    margin-top: 15.8rem;
 
-  ul.noshow {
-      margin: 0 0 3rem 0;
-      padding: 0.5rem;
-      display: flex;
-      justify-content: space-between;
-      list-style: none;
-      border-top: 1px solid #d1dadc;
-      border-bottom: 1px solid #d1dadc;
-  }
-  
-  ul.noshow li {
-    display: none;
-  }
-
-  ul.noshow p {
-    display: inline;
-    margin-top: 0; 
-    margin-bottom: 0;
-    align-self: center;
-  }
-  
-  ul.noshow i {
-    display: inline-block;
-  }
-
-  .footer i {
-    padding-left: 3.5%;
-  }
-}
-
-@media screen and (max-width: 360px) {
-
-  .logo {
-    width: 70%;
-  }
-
-  ul.sections {
-    display: block;
   }
 
   .header ul li {
@@ -259,6 +209,192 @@ ul.noshow i {
   ul.sections i {
     display: block;
     float: right;
+    margin-right: 0.3em;
+  }
+
+  .main {
+    width: inherit;
+  }
+  
+  ul.noshow {
+      margin: 0 0 3rem 0;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      border-top: 1px solid #d1dadc;
+      border-bottom: 1px solid #d1dadc;
+  }
+  
+  ul.noshow li {
+    display: none;
+  }
+
+  ul.noshow p {
+    display: inline;
+    margin-top: 0; 
+    margin-bottom: 0;
+    align-self: center;
+  }
+  
+  ul.noshow i {
+    display: inline-block;
+  }
+
+  .footer {
+  }
+
+  .footer i {
+    padding-left: 7%;
+  }
+
+}
+@media (min-width: 362px) and (max-width: 600px)  {
+
+  .logo {
+    width: 70%;
+  }
+
+	div.sections {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.1);
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+  }
+
+
+  ul.sections {
+    display: block;
+    background-color: white;
+    width: 100%;
+    margin-top: 8.8rem;
+  }
+
+  .header ul li {
+    border-top: none;
+  }
+  
+  ul.sections li {
+    display: block;
+    text-align: center;
+  }
+  
+  ul.sections li + li {
+    border-left: none; 
+  }
+
+  ul.sections li a {
+    display: -webkit-inline-box;
+  }
+  
+  ul.sections p {
+    display: none;
+  }
+  
+  ul.sections i {
+    display: block;
+    float: right;
+    margin-right: 0.3em;
+  }
+
+  .main {
+    margin: 0; 
+    padding-right: 4%;
+    padding-left: 4%;
+    width: 100%;
+  }
+
+  ul.noshow {
+      margin: 0 0 1.7rem 0;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      border-top: 1px solid #d1dadc;
+      border-bottom: 1px solid #d1dadc;
+  }
+  
+  ul.noshow li {
+    display: none;
+  }
+
+  ul.noshow p {
+    display: inline;
+    margin-top: 0; 
+    margin-bottom: 0;
+    align-self: center;
+  }
+  
+  ul.noshow i {
+    display: inline-block;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer i {
+  }
+}
+
+@media screen and (max-width: 360px) {
+
+  .logo {
+    width: 70%;
+  }
+
+  div.sections {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.1);
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+  }
+
+  ul.sections {
+    display: block;
+    background-color: white;
+    width: 100%;
+    margin-top: 7.8rem;
+
+  }
+
+  .header ul li {
+    border-top: none;
+  }
+  
+  ul.sections li {
+    display: block;
+    text-align: center;
+  }
+  
+  ul.sections li + li {
+    border-left: none; 
+  }
+
+  ul.sections li a {
+    display: -webkit-inline-box;
+  }
+
+   ul.sections p {
+    display: none;    
+    margin-top: 0; 
+    margin-bottom: 0;
+  }
+  
+  ul.sections i {
+    display: block;
+    float: right;
+    margin-right: 0.3em;
   }
 
   .main {
