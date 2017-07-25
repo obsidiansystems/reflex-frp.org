@@ -4,6 +4,7 @@
 
 import Focus.Backend (withFocus)
 import Focus.Backend.Snap (serveStaticIndex, appConfig_initialHead, appConfig_initialBody, serveApp)
+import Focus.Weblayouts.Kiss
 import Snap
 import Focus.HTTP.Serve (serveAssets)
 import Reflex.Dom.Builder.Static
@@ -15,8 +16,6 @@ import qualified Data.ByteString.Char8 as BSC
 import Data.Text.Encoding
 import Control.Lens
 import Control.Monad.IO.Class
---import qualified Data.Text as T
---import Data.Maybe
 
 import Frontend.App --used for siteHead & siteBody
 import Common.Route --used for urlToRoute function & Route data type

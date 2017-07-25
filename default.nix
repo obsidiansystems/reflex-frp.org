@@ -4,6 +4,7 @@
   commonDepends = p: with p; [
     data-default
     file-embed
+    focus-weblayouts
   ];
   frontendDepends = p: with p; [
     data-default
@@ -17,6 +18,7 @@
     these
     jsaddle
     font-awesome-type
+    focus-weblayouts
   ];
   backendDepends = p: with p; [
     data-default
@@ -26,5 +28,6 @@
     snap-loader-static
     snap-server
     focus-serve
+    focus-weblayouts
   ];
 }
