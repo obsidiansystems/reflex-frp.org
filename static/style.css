@@ -69,7 +69,6 @@ ul.sections li a {
     align-items: flex-start;
     color: #333;
     text-transform: uppercase;
-    border-bottom: 4px solid transparent;
     cursor: pointer;
 }
 
@@ -84,6 +83,11 @@ ul.sections p {
 ul.sections i {
   display: none;
 }  
+
+.chosenOne {
+	border-bottom: 4px solid red;
+}
+
 .main {
     margin: auto;
     width: 650px;
@@ -140,7 +144,6 @@ ul.noshow li a {
     align-items: flex-start;
     color: #333;
     text-transform: uppercase;
-    border-bottom: 4px solid transparent;
     cursor: pointer;
 }
 
@@ -198,8 +201,12 @@ ul.noshow i {
 
   ul.sections li a {
     display: block;
-		border-bottom: 4px solid transparent;
+		border-bottom: hidden;
   }
+	
+	.chosenOne {
+		border-bottom: hidden;
+	}
 
    ul.sections p {
     display: none;    
@@ -291,9 +298,13 @@ ul.noshow i {
 
   ul.sections li a {
     display: block;
-		border-bottom: 4px solid transparent;
+		border-bottom: hidden;
   }
-  
+
+ 	.chosenOne {
+		border-bottom: hidden;
+	}
+ 
   ul.sections p {
     display: none;
   }
@@ -338,6 +349,7 @@ ul.noshow i {
 
   .footer {
   }
+
   .footer i {
 		padding-left: 3%;
   }
@@ -384,8 +396,12 @@ ul.noshow i {
 
   ul.sections li a {
     display: block;
-		border-bottom: 4px solid transparent;
+		border-bottom: hidden;
   }
+
+	.chosenOne {
+		border-bottom: hidden;
+	}
 
    ul.sections p {
     display: none;    
