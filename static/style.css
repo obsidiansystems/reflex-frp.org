@@ -253,7 +253,7 @@ ul.noshow i {
   }
 
   .footer i {
-    padding-left: 7%;
+    margin: 0 3.5% 0 3.5%;
   }
 
 }
@@ -351,7 +351,7 @@ ul.noshow i {
   }
 
   .footer i {
-		padding-left: 3%;
+		margin: 0 1.5% 0 1.5%;
   }
 }
 
@@ -448,7 +448,7 @@ ul.noshow i {
   }
 
   .footer i {
-    padding-left: 7%;
+		margin: 0 3.5% 0 3.5%;
   }
 
 }
