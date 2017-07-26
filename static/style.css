@@ -105,6 +105,7 @@ ul.sections i {
 .footer i {
   color: #453B3B;
   font-size: 1.2em;
+	margin: 0 1% 0 1%;
 }
 
 .footer i:hover {
@@ -350,7 +351,7 @@ ul.noshow i {
   }
 
   .footer i {
-		margin: 0 1.5% 0 1.5%;
+		margin: 0 2.5% 0 2.5%;
   }
 }
 
