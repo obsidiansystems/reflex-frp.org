@@ -197,7 +197,8 @@ ul.noshow i {
   }
 
   ul.sections li a {
-    display: -webkit-inline-box;
+    display: block;
+		border-bottom: 4px solid transparent;
   }
 
    ul.sections p {
@@ -289,7 +290,8 @@ ul.noshow i {
   }
 
   ul.sections li a {
-    display: -webkit-inline-box;
+    display: block;
+		border-bottom: 4px solid transparent;
   }
   
   ul.sections p {
@@ -335,10 +337,9 @@ ul.noshow i {
   }
 
   .footer {
-    display: flex;
-    justify-content: space-around;
   }
   .footer i {
+		padding-left: 3%;
   }
 }
 
@@ -382,7 +383,8 @@ ul.noshow i {
   }
 
   ul.sections li a {
-    display: -webkit-inline-box;
+    display: block;
+		border-bottom: 4px solid transparent;
   }
 
    ul.sections p {
