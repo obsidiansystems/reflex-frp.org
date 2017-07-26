@@ -48,7 +48,7 @@ body {
 }
 
 ul.sections {
-    margin: 0 0 3rem 0;
+    margin: 0 8px 3rem 8px;
     padding: 0.5rem;
     display: flex;
     justify-content: center;
@@ -218,7 +218,6 @@ ul.noshow i {
   ul.sections i {
     display: block;
     float: right;
-    margin-right: 0.3em;
   }
 
   .main {
@@ -281,7 +280,7 @@ ul.noshow i {
     display: block;
     background-color: white;
     width: 100%;
-    margin-top: 8.8rem;
+    margin-top: 8.7rem;
   }
 
   .header ul li {
@@ -313,7 +312,6 @@ ul.noshow i {
   ul.sections i {
     display: block;
     float: right;
-    margin-right: 0.3em;
   }
 
   .main {
@@ -378,7 +376,7 @@ ul.noshow i {
     display: block;
     background-color: white;
     width: 100%;
-    margin-top: 7.8rem;
+    margin-top: 7.6rem;
 
   }
 
@@ -413,7 +411,6 @@ ul.noshow i {
   ul.sections i {
     display: block;
     float: right;
-    margin-right: 0.3em;
   }
 
   .main {
