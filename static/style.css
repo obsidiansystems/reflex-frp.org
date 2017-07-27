@@ -267,6 +267,7 @@ ul.noshow i {
   .footer {
     position: inherit;
     font-size: 0.8em;
+		margin-bottom: 2%;
   }
 
 }
