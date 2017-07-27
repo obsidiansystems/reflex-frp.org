@@ -257,7 +257,21 @@ ul.noshow i {
   }
 
 }
-@media (min-width: 362px) and (max-width: 600px)  {
+
+@media (orientation: landscape) {
+
+  html {
+    overflow: scroll;
+  }
+
+  .footer {
+    position: inherit;
+    font-size: 0.8em;
+  }
+
+}
+
+@media (min-width: 362px) and (max-width: 600px) and (orientation: portrait) {
 
   .logo {
     width: 70%;
@@ -354,7 +368,7 @@ ul.noshow i {
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 360px) and (orientation: portrait){
 
   .logo {
     width: 70%;
