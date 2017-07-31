@@ -8,21 +8,12 @@
 
 module Common.Route where
 
-import Reflex
 import Reflex.Dom
+import Reflex.Dom.Path
 
 import Data.Text (Text)
-import qualified Data.Text as Text
-import Data.Map (Map)
 import qualified Data.Map as Map
 import Data.Maybe
-import Data.Monoid
-import Control.Monad.Fix
-import Control.Monad
-
-import Focus.JS.FontAwesome as FA
-import Web.FontAwesomeType
-import Reflex.Dom.Path
 
 import Focus.Weblayouts.Kiss
 

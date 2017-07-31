@@ -28,6 +28,6 @@
     snap-loader-static
     snap-server
     focus-serve
-    focus-weblayouts
+    focus-weblayouts-backend
   ];
 }
