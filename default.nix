@@ -9,7 +9,7 @@
   frontendDepends = p: with p; [
     data-default
     file-embed
-    focus-http-th
+    obelisk-asset-th
     focus-js
     ghcjs-dom
     reflex
@@ -27,7 +27,7 @@
     snap-core
     snap-loader-static
     snap-server
-    focus-serve
+    obelisk-asset-serve
     focus-weblayouts-backend
   ];
 }
