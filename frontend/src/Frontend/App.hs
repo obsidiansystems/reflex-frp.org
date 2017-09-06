@@ -20,7 +20,7 @@ import Control.Monad
 
 import Focus.JS.FontAwesome as FA
 import Web.FontAwesomeType
-import Focus.Weblayouts.Kiss
+import Obelisk.Haskpress.Frontend.Kiss
 
 ------------------- <head></head> ----------------------------------------
 siteHead :: DomBuilder t m => m ()

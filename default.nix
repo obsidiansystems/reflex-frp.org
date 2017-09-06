@@ -4,7 +4,7 @@
   commonDepends = p: with p; [
     data-default
     file-embed
-    focus-weblayouts
+    obelisk-haskpress-frontend
   ];
   frontendDepends = p: with p; [
     data-default
@@ -18,7 +18,7 @@
     these
     jsaddle
     font-awesome-type
-    focus-weblayouts
+    obelisk-haskpress-frontend
   ];
   backendDepends = p: with p; [
     data-default
@@ -28,6 +28,6 @@
     snap-loader-static
     snap-server
     obelisk-asset-serve
-    focus-weblayouts-backend
+    obelisk-haskpress-backend
   ];
 }
