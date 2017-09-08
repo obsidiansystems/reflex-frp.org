@@ -18,7 +18,7 @@ import Common.Route -- ^ used for navBar's Route data type
 import Control.Monad.Fix
 import Control.Monad
 
-import Focus.JS.FontAwesome as FA
+import Obelisk.FontAwesome as FA
 import Web.FontAwesomeType
 import Obelisk.Haskpress.Frontend.Kiss
 

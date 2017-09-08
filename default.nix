@@ -9,8 +9,8 @@
   frontendDepends = p: with p; [
     data-default
     file-embed
+    obelisk-font-awesome
     obelisk-asset-th
-    focus-js
     ghcjs-dom
     reflex
     reflex-dom
