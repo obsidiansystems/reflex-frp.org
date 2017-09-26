@@ -42,7 +42,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   align-content: center;
 }
@@ -83,7 +83,7 @@ ul.sections p {
 
 ul.sections i {
   display: none;
-}  
+}
 
 .chosenOne {
 	border-bottom: 4px solid red;
@@ -117,7 +117,7 @@ ul.sections i {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   align-content: center;
 }
@@ -190,40 +190,45 @@ ul.noshow i {
   .header ul li {
     border-top: none;
   }
-  
+
   ul.sections li {
     display: block;
     text-align: center;
   }
-  
+
   ul.sections li + li {
-    border-left: none; 
+    border-left: none;
   }
 
   ul.sections li a {
     display: block;
 		border-bottom: hidden;
   }
-	
+
 	.chosenOne {
 		border-bottom: hidden;
 	}
 
    ul.sections p {
-    display: none;    
-    margin-top: 0; 
+    display: none;
+    margin-top: 0;
     margin-bottom: 0;
   }
-  
+
   ul.sections i {
     display: block;
     float: right;
+  }
+  div {
+    display: inline;
+    max-height: 2.4em;
+    font-weight: 400;
   }
 
   .main {
     width: inherit;
   }
-  
+
   ul.noshow {
       margin: 0 0 3rem 0;
       padding: 0.5rem;
@@ -233,18 +238,18 @@ ul.noshow i {
       border-top: 1px solid #d1dadc;
       border-bottom: 1px solid #d1dadc;
   }
-  
+
   ul.noshow li {
     display: none;
   }
 
   ul.noshow p {
     display: inline;
-    margin-top: 0; 
+    margin-top: 0;
     margin-bottom: 0;
     align-self: center;
   }
-  
+
   ul.noshow i {
     display: inline-block;
   }
@@ -272,8 +277,8 @@ ul.noshow i {
 
 }
 
-@media (min-width: 362px) and (max-width: 376px) and (orientation: portrait) {   
-	
+@media (min-width: 362px) and (max-width: 376px) and (orientation: portrait) {
+
 	.logo {
     width: 70%;
   }
@@ -301,14 +306,14 @@ ul.noshow i {
   .header ul li {
     border-top: none;
   }
-  
+
   ul.sections li {
     display: block;
     text-align: center;
   }
-  
+
   ul.sections li + li {
-    border-left: none; 
+    border-left: none;
   }
 
   ul.sections li a {
@@ -319,18 +324,18 @@ ul.noshow i {
  	.chosenOne {
 		border-bottom: hidden;
 	}
- 
+
   ul.sections p {
     display: none;
   }
-  
+
   ul.sections i {
     display: block;
     float: right;
   }
 
   .main {
-    margin: 0; 
+    margin: 0;
     padding-right: 4%;
     padding-left: 4%;
     width: 100%;
@@ -345,18 +350,18 @@ ul.noshow i {
       border-top: 1px solid #d1dadc;
       border-bottom: 1px solid #d1dadc;
   }
-  
+
   ul.noshow li {
     display: none;
   }
 
   ul.noshow p {
     display: inline;
-    margin-top: 0; 
+    margin-top: 0;
     margin-bottom: 0;
     align-self: center;
   }
-  
+
   ul.noshow i {
     display: inline-block;
   }
@@ -399,14 +404,14 @@ ul.noshow i {
   .header ul li {
     border-top: none;
   }
-  
+
   ul.sections li {
     display: block;
     text-align: center;
   }
-  
+
   ul.sections li + li {
-    border-left: none; 
+    border-left: none;
   }
 
   ul.sections li a {
@@ -417,18 +422,18 @@ ul.noshow i {
  	.chosenOne {
 		border-bottom: hidden;
 	}
- 
+
   ul.sections p {
     display: none;
   }
-  
+
   ul.sections i {
     display: block;
     float: right;
   }
 
   .main {
-    margin: 0; 
+    margin: 0;
     padding-right: 4%;
     padding-left: 4%;
     width: 100%;
@@ -443,18 +448,18 @@ ul.noshow i {
       border-top: 1px solid #d1dadc;
       border-bottom: 1px solid #d1dadc;
   }
-  
+
   ul.noshow li {
     display: none;
   }
 
   ul.noshow p {
     display: inline;
-    margin-top: 0; 
+    margin-top: 0;
     margin-bottom: 0;
     align-self: center;
   }
-  
+
   ul.noshow i {
     display: inline-block;
   }
@@ -467,8 +472,8 @@ ul.noshow i {
   }
 }
 
-@media screen and (max-width: 320px) and (orientation: portrait) {   
-	
+@media screen and (max-width: 320px) and (orientation: portrait) {
+
 	.logo {
     width: 70%;
   }
@@ -496,14 +501,14 @@ ul.noshow i {
   .header ul li {
     border-top: none;
   }
-  
+
   ul.sections li {
     display: block;
     text-align: center;
   }
-  
+
   ul.sections li + li {
-    border-left: none; 
+    border-left: none;
   }
 
   ul.sections li a {
@@ -516,11 +521,11 @@ ul.noshow i {
 	}
 
    ul.sections p {
-    display: none;    
-    margin-top: 0; 
+    display: none;
+    margin-top: 0;
     margin-bottom: 0;
   }
-  
+
   ul.sections i {
     display: block;
     float: right;
@@ -529,7 +534,7 @@ ul.noshow i {
   .main {
     width: inherit;
   }
-  
+
   ul.noshow {
       margin: 0 0 3rem 0;
       padding: 0.5rem;
@@ -539,18 +544,18 @@ ul.noshow i {
       border-top: 1px solid #d1dadc;
       border-bottom: 1px solid #d1dadc;
   }
-  
+
   ul.noshow li {
     display: none;
   }
 
   ul.noshow p {
     display: inline;
-    margin-top: 0; 
+    margin-top: 0;
     margin-bottom: 0;
     align-self: center;
   }
-  
+
   ul.noshow i {
     display: inline-block;
   }
@@ -592,14 +597,14 @@ ul.noshow i {
   .header ul li {
     border-top: none;
   }
-  
+
   ul.sections li {
     display: block;
     text-align: center;
   }
-  
+
   ul.sections li + li {
-    border-left: none; 
+    border-left: none;
   }
 
   ul.sections li a {
@@ -612,11 +617,11 @@ ul.noshow i {
 	}
 
    ul.sections p {
-    display: none;    
-    margin-top: 0; 
+    display: none;
+    margin-top: 0;
     margin-bottom: 0;
   }
-  
+
   ul.sections i {
     display: block;
     float: right;
@@ -625,7 +630,7 @@ ul.noshow i {
   .main {
     width: inherit;
   }
-  
+
   ul.noshow {
       margin: 0 0 3rem 0;
       padding: 0.5rem;
@@ -635,18 +640,18 @@ ul.noshow i {
       border-top: 1px solid #d1dadc;
       border-bottom: 1px solid #d1dadc;
   }
-  
+
   ul.noshow li {
     display: none;
   }
 
   ul.noshow p {
     display: inline;
-    margin-top: 0; 
+    margin-top: 0;
     margin-bottom: 0;
     align-self: center;
   }
-  
+
   ul.noshow i {
     display: inline-block;
   }
