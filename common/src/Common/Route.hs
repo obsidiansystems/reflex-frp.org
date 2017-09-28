@@ -14,6 +14,7 @@ import Reflex.Dom.Path
 import Data.Text (Text)
 import qualified Data.Map as Map
 import Data.Maybe
+import Data.Semigroup
 
 import Obelisk.Haskpress.Frontend.Kiss
 
@@ -77,14 +78,14 @@ tutorials = elClass "div" "main" $ do
     el "div" $ do
     elClass "h3" "Videos" $ text "Videos"
     el "ol" $ do
-      el "li" $ do
-        el "label" $ text "Reflex: Practical Functional Reactive Programming (FRP) in Haskell: "
-        elAttr "a" ("href" =: "https://www.youtube.com/watch?v=mYvkcskJbc4") $ text "Video One"
-        el "div" $ do
-        el "li" $ do
-          el "label" $ text "Using Reflex-Dom With CSS: "
-          elAttr "a" ("href" =: "https://www.youtube.com/watch?v=QNQaJLNKJQA") $ text "Video Two"
-          elAttr "img" ("src" =: "img/blue-winged-warbler.jpg") blank
+      elClass "li" "samplevideo"$ do
+        elAttr "a" ("href" =: "https://www.youtube.com/watch?v=mYvkcskJbc4") $ do
+          elAttr "img" ("src" =: "img/Video-screenshot.jpg" <> "class" =: "youtube") blank
+        el "label" $ text "Reflex: Practical Functional Reactive Programming (FRP) in Haskell"
+      elClass "li" "samplevideo" $ do
+        elAttr "a" ("href" =: "https://www.youtube.com/watch?v=QNQaJLNKJQA") $ do
+           elAttr "img" ("src" =: "img/Video-screenshot.jpg" <> "class" =: "youtube" <> "class" =: "Css Video") blank
+        el "label" $ text "Using Reflex-Dom With CSS"
 
 
 
