@@ -28,6 +28,8 @@ body {
 
 .samplevideo {
   display: flex;
+  margin: 0.5px;
+  padding: 0.5%;
 }
 
 .header h1 {
