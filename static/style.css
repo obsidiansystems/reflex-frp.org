@@ -59,7 +59,6 @@ body {
   align-items: center;
   align-content: center;
 }
-
 ul.sections {
     margin: 0 8px 3rem 8px;
     padding: 0.5rem;
@@ -144,6 +143,8 @@ ul.noshow {
     border-top: 1px solid #d1dadc;
     border-bottom: 1px solid #d1dadc;
     width: 100%;
+    box-sizing:border-box;
+    float: initial;
 }
 
 ul.noshow li + li {
@@ -284,7 +285,7 @@ ul.noshow i {
 
   .footer {
     position: inherit;
-    font-size: 0.8em;
+    font-size: 1.2em;
 		margin-bottom: 2%;
   }
 

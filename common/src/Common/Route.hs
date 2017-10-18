@@ -84,7 +84,7 @@ tutorials = elClass "div" "main" $ do
         el "label" $ text "Reflex: Practical Functional Reactive Programming (FRP) in Haskell"
       elClass "li" "samplevideo" $ do
         elAttr "a" ("href" =: "https://www.youtube.com/watch?v=QNQaJLNKJQA") $ do
-           elAttr "img" ("src" =: "img/Video-screenshot.jpg" <> "class" =: "youtube" <> "class" =: "Css Video") blank
+           elAttr "img" ("src" =: "img/Video-screenshot.jpg" <> "class" =: "youtube") blank
         el "label" $ text "Using Reflex-Dom With CSS"
 
 
