@@ -13,7 +13,7 @@ import qualified Data.Map as Map
 import Data.Monoid
 import Data.Map (Map)
 import Data.Text (Text)
-import Common.Route -- ^ used for navBar's Route data type
+import Common.Route -- used for navBar's Route data type
 import Control.Monad.Fix
 import Control.Monad
 
@@ -23,12 +23,12 @@ import Obelisk.Haskpress.Frontend.Kiss
 ------------------- <head></head> ----------------------------------------
 siteHead :: DomBuilder t m => m ()
 siteHead = do
-  el "title" $ text "Reflex FRP"      -- ^ add Page title
-  elAttr "meta" metaDesc blank        -- ^ add meta-data description
-  elAttr "meta" metaKeywords blank    -- ^ add meta-data keywords
-  elAttr "meta" viewport blank        -- ^ add meta-data viewport
-  fontAwesomeCDN                      -- ^ link MaxCDN FontAwesome
-  -- | add various favIcon links
+  el "title" $ text "Reflex FRP"      -- add Page title
+  elAttr "meta" metaDesc blank        -- add meta-data description
+  elAttr "meta" metaKeywords blank    -- add meta-data keywords
+  elAttr "meta" viewport blank        -- add meta-data viewport
+  fontAwesomeCDN                      -- link MaxCDN FontAwesome
+  -- add various favIcon links
   faviconLinker "icon" "image/png" "16x16" "img/favicon-16x16.png"
   faviconLinker "icon" "image/png" "32x32" "img/favicon-32x32.png"
   faviconLinker "apple-touch-icon" "/" "57x57" "img/apple-touch-icon-57x57.png"
@@ -40,12 +40,12 @@ siteHead = do
   faviconLinker "apple-touch-icon" "/" "144x144" "img/apple-touch-icon-144x144.png"
   faviconLinker "apple-touch-icon" "/" "152x152" "img/apple-touch-icon-152x152.png"
   faviconLinker "icon" "image/png" "img/favicon-196x196.png" "196x196"
-  styleSheet "style.css"              -- ^ link css stylesheet
-  styleSheet "font.css"               -- ^ link css fonts
+  styleSheet "style.css"              -- link css stylesheet
+  styleSheet "font.css"               -- link css fonts
   return ()
 
 ------------------- <body></body> ----------------------------------------
--- | takes the initial Route of the website and creates a widget
+-- takes the initial Route of the website and creates a widget
 siteBody :: (DomBuilder t m, MonadHold t m, MonadFix m, TriggerEvent t m, PostBuild t m
             , PerformEvent t m, Prerender x m, WebRoute Route, IsPath Route, Ord Route)
             => Route -> m ()
@@ -58,7 +58,7 @@ siteBody initRoute = do
       el "br" $ return ()
   el "br" blank
 
-  -- | Place Font Awesome Icons in footer <div>
+  -- Place Font Awesome Icons in footer <div>
   elClass "div" "footer" $ do
     elAttr "a" rdirTwitter $ do
       FA.faIcon FaTwitter def
@@ -81,7 +81,7 @@ siteBody initRoute = do
 
 ----------------------Helper Functions-------------------------------
 
--- | styleSheet are functions to add links to html <head>
+-- styleSheet are functions to add links to html <head>
 styleSheet :: DomBuilder t m => Text -> m ()
 styleSheet myLink = elAttr "link" (Map.fromList [
     ("rel", "stylesheet"),

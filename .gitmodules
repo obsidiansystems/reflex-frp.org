@@ -2,3 +2,6 @@
 	path = focus
 	url = git@gitlab.com:obsidian.systems/focus
 	branch = develop
+[submodule "obelisk"]
+	path = obelisk
+	url = git@github.com:obsidiansystems/obelisk.git
