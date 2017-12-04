@@ -4,8 +4,6 @@ cabal-version: >= 1.24
 build-type: Simple
 
 library
-  main-is: Main.hs
-
   hs-source-dirs: src
   build-depends: 
     aeson,
