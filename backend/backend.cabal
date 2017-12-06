@@ -34,6 +34,7 @@ executable backend
     obelisk-font-awesome,
     obelisk-haskpress-backend,
     obelisk-haskpress-frontend,
+    obelisk-snap,
     primitive,
     process,
     reflex,
