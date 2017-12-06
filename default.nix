@@ -8,7 +8,7 @@
     obelisk-haskpress-frontend = ./obelisk/obelisk-haskpress/obelisk-haskpress-frontend;
     obelisk-haskpress-backend = ./obelisk/obelisk-haskpress/obelisk-haskpress-backend;
     obelisk-asset-serve = ./obelisk/obelisk-asset/serve; 
-    obelisk-weighter = ./obelisk/obelisk-weighter;
+    obelisk-snap = ./obelisk/obelisk-snap;
   };
 
   overrides = self: super: with pkgs.haskell.lib; {
