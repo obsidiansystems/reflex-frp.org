@@ -18,7 +18,7 @@ import Control.Monad.Fix
 import Control.Monad
 
 import Obelisk.FontAwesome as FA
-import Obelisk.Haskpress.Frontend.Kiss
+import Obelisk.Example.Frontend.Kiss
 
 ------------------- <head></head> ----------------------------------------
 siteHead :: DomBuilder t m => m ()

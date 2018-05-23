@@ -13,7 +13,7 @@ import Data.Text (Text)
 import qualified Data.Map as Map
 import Data.Maybe
 
-import Obelisk.Haskpress.Frontend.Kiss
+import Obelisk.Example.Frontend.Kiss
 
 -- | Custom data type that corresponds to a site's navBar
 data Route = Route_Home | Route_Tutorials | Route_Examples | Route_Documentation | Route_FAQ

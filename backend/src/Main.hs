@@ -5,7 +5,7 @@
 import Snap
 import Reflex.Dom.Builder.Static
 
-import Obelisk.Haskpress.Backend.KissBackend
+import Obelisk.Example.Backend.KissBackend
 import Frontend.App --used for siteHead & siteBody
 import Common.Route --used for urlToRoute function & Route data type
 
