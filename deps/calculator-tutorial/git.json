@@ -1,7 +1,7 @@
 {
   "url": "ssh://git@github.com/obsidiansystems/calculator-tutorial.git",
-  "rev": "27afe7631109b287ebc84b7852c1d522bd55e491",
-  "sha256": "0zw5kjyicfmag9ihbgdfcz2is0mqhv7bypl4ix1yq0f5q3dv3ajr",
+  "rev": "c3fde56371994d7bf5b90ca80368eb53f94fdbd4",
+  "sha256": "011189i69jai5cf5wr19a3h5gwbrwn46r6d7v2l7xcma6hgrmgkd",
   "fetchSubmodules": false,
-  "branch": "ts-qq"
+  "branch": "ls-bump-obelisk"
 }
