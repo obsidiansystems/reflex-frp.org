@@ -32,6 +32,7 @@ data Route :: * -> * where
   Route_GetStarted :: Route ()
   Route_Tutorial :: Route ()
   Route_Resources :: Route ()
+  Route_Examples_Todo :: Route ()
 deriving instance Show (Route a)
 
 deriveRouteComponent ''Route
@@ -46,7 +47,8 @@ fullRouteEncoder = mkFullRouteEncoder
     Route_Home -> PathEnd $ unitEncoder mempty
     Route_GetStarted -> PathSegment "get-started" $ unitEncoder mempty
     Route_Tutorial -> PathSegment "tutorial" $ unitEncoder mempty
-    Route_Resources -> PathSegment "resources" $ unitEncoder mempty)
+    Route_Resources -> PathSegment "resources" $ unitEncoder mempty
+    Route_Examples_Todo -> PathSegment "examples-todo" $ unitEncoder mempty)
 
 -- | Provide a human-readable name for a given section
 sectionTitle :: Some Route -> Text
@@ -55,6 +57,7 @@ sectionTitle (Some.Some sec) = case sec of
   Route_GetStarted -> "Get Started"
   Route_Tutorial -> "Tutorial"
   Route_Resources -> "Resources"
+  Route_Examples_Todo -> "Todo"
 
 -- | Provide a human-readable name for a route
 routeTitle :: R Route -> Text
@@ -67,3 +70,4 @@ sectionHomepage (Some.Some sec) = sec :/ case sec of
   Route_GetStarted -> ()
   Route_Tutorial -> ()
   Route_Resources -> ()
+  Route_Examples_Todo -> ()
