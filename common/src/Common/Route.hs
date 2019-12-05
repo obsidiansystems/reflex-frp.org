@@ -32,9 +32,16 @@ data Route :: * -> * where
   Route_GetStarted :: Route ()
   Route_Tutorial :: Route ()
   Route_Resources :: Route ()
-  Route_Examples_Todo :: Route ()
+  Route_Examples :: Route (R ExamplesRoute)
 deriving instance Show (Route a)
 
+data ExamplesRoute :: * -> * where
+  ExamplesRoute_LandingPage :: ExamplesRoute ()
+  ExamplesRoute_Todo :: ExamplesRoute ()
+  ExamplesRoute_CollapsingContent :: ExamplesRoute ()
+deriving instance Show (ExamplesRoute a)
+
+deriveRouteComponent ''ExamplesRoute
 deriveRouteComponent ''Route
 deriveRouteComponent ''BackendRoute
 
@@ -48,7 +55,11 @@ fullRouteEncoder = mkFullRouteEncoder
     Route_GetStarted -> PathSegment "get-started" $ unitEncoder mempty
     Route_Tutorial -> PathSegment "tutorial" $ unitEncoder mempty
     Route_Resources -> PathSegment "resources" $ unitEncoder mempty
-    Route_Examples_Todo -> PathSegment "examples-todo" $ unitEncoder mempty)
+    Route_Examples -> PathSegment "examples" $ pathComponentEncoder $ \case
+      ExamplesRoute_LandingPage -> PathEnd $ unitEncoder mempty
+      ExamplesRoute_Todo -> PathSegment "todo" $ unitEncoder mempty
+      ExamplesRoute_CollapsingContent -> PathSegment "collapsing-content" $ unitEncoder mempty
+  )
 
 -- | Provide a human-readable name for a given section
 sectionTitle :: Some Route -> Text
@@ -57,7 +68,7 @@ sectionTitle (Some.Some sec) = case sec of
   Route_GetStarted -> "Get Started"
   Route_Tutorial -> "Tutorial"
   Route_Resources -> "Resources"
-  Route_Examples_Todo -> "Todo"
+  Route_Examples -> "Examples"
 
 -- | Provide a human-readable name for a route
 routeTitle :: R Route -> Text
@@ -70,4 +81,4 @@ sectionHomepage (Some.Some sec) = sec :/ case sec of
   Route_GetStarted -> ()
   Route_Tutorial -> ()
   Route_Resources -> ()
-  Route_Examples_Todo -> ()
+  Route_Examples -> ExamplesRoute_LandingPage :/ ()
