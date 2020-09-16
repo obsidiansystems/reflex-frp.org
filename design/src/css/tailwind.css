@@ -4,6 +4,12 @@
 @tailwind components;
 
 /* Custom classes here */
+.standard-link {
+	@apply text-purple-700;
+}
 
+.standard-link:hover {
+	@apply text-purple-500;
+}
 
 @tailwind utilities;
