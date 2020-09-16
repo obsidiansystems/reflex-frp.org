@@ -4,6 +4,7 @@
 @tailwind components;
 
 /* Custom classes here */
+
 .standard-link {
 	@apply text-purple-700;
 }
@@ -11,5 +12,14 @@
 .standard-link:hover {
 	@apply text-purple-500;
 }
+
+.nav-link {
+	@apply p-2 rounded-md font-medium text-gray-500 transition ease-in-out duration-150;
+}
+
+.nav-link:hover {
+	@apply bg-gray-100 text-gray-800;
+}
+
 
 @tailwind utilities;
