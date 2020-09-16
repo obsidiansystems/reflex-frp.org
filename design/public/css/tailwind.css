@@ -2158,6 +2158,39 @@ video {
 
 /* Custom classes here */
 
+.standard-link {
+  --text-opacity: 1;
+  color: #6c2bd9;
+  color: rgba(108, 43, 217, var(--text-opacity));
+}
+
+.standard-link:hover {
+  --text-opacity: 1;
+  color: #9061f9;
+  color: rgba(144, 97, 249, var(--text-opacity));
+}
+
+.nav-link {
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  --text-opacity: 1;
+  color: #6b7280;
+  color: rgba(107, 114, 128, var(--text-opacity));
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.nav-link:hover {
+  --bg-opacity: 1;
+  background-color: #f4f5f7;
+  background-color: rgba(244, 245, 247, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #252f3f;
+  color: rgba(37, 47, 63, var(--text-opacity));
+}
+
 .space-y-0 > :not(template) ~ :not(template) {
   --space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--space-y-reverse)));
