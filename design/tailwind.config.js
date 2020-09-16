@@ -1,6 +1,12 @@
 module.exports = {
   purge: [],
   theme: {
+    fontFamily: {
+      display: ['DM Serif Display', 'sans-serif'],
+      body: ['Poppins', 'sans-serif'],
+      sans: ['Poppins', 'sans-serif'],
+      mono: ['Roboto Mono', 'monospace']
+    },
     extend: {
       maxWidth: {
         'viewport': '100vp'

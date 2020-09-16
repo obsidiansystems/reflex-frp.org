@@ -1,6 +1,9 @@
+@import "./icons.css";
+
 @tailwind base;
 @tailwind components;
 
+/* Custom classes here */
 
 
 @tailwind utilities;
