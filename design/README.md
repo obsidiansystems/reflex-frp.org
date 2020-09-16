@@ -7,10 +7,13 @@ Some DOM may be commented out with description explaining when it's used (eg mod
 # Building, working, watching, etc
 
 ```bash
+# Install necessary NPM packages
+npm install
+
 # Builds the HTML and CSS
 npm run build
 
-# Runs a small server that will reload when resources change
+# Runs a small server that will also reload pages when resources change
 npm run serve
 
 # Starts a server and watches all HTML/CSS and config files for changes
