@@ -8,10 +8,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap">
   <link rel="stylesheet" href="/css/tailwind.css">
 </head>
-<body>
-  
-{% block body %}
-{% endblock %}
-  
+<body class="flex flex-col">
+{% include "partials/nav.njk" %}
+
+<div class="flex-grow">
+	{% block body %}
+	{% endblock %}
+</div>
+
+{% include "partials/footer.njk" %}
 </body>
 </html>
