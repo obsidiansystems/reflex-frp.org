@@ -5,11 +5,11 @@
 
 /* Custom classes here */
 
-.standard-link {
+.standard-link, .standard-links * a {
 	@apply text-purple-700;
 }
 
-.standard-link:hover {
+.standard-link:hover, .standard-links * a:hover {
 	@apply text-purple-500;
 }
 
@@ -21,5 +21,14 @@
 	@apply bg-gray-100 text-gray-800;
 }
 
+p.body-copy {
+	@apply text-gray-700 leading-relaxed text-sm mb-4;
+}
+
+@screen md {
+	p.body-copy {
+		@apply text-base;
+	}
+}
 
 @tailwind utilities;
