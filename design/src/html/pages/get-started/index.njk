@@ -1,14 +1,14 @@
 {% extends "boilerplate.njk" %}
 
 {% block extras %}
-  {# {% include "partials/mobile-nav/get-started.njk" %} #}
+  {% include "partials/mobile-nav/get-started.njk" %}
 {% endblock %}
 
 {% block body %}
 
   <div class="flex max-w-screen-xl">
 
-    <nav class="hidden lg:block w-1/4 flex-shrink-0 bg-gray-100 px-6 py-12">
+    <nav class="hidden md:block w-1/4 flex-shrink-0 bg-gray-100 px-6 py-12">
       <ul class="standard-links space-y-2">
         <li><a href="" class="">Get Started</a></li>
         <li><a href="" class="">Try Reflex-FRP</a></li>
@@ -32,15 +32,15 @@
       </ul>
     </nav>
 
-    <div class="">
-      <div class="px-6 sm:px-12">
+    <div class="px-6 sm:px-8 lg:px-12">
+      <section>
         <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl mb-8">Getting Started</h1>
         <p class="text-gray-500 mb-4 md:text-lg">This page provides links to information on Reflex documentation and related resources.</p>
         <p class="text-gray-500 mb-4 md:text-lg">Reflex-FRP is a Haskell-based ecosystem for building user interfaces and web apps. Learn what makes Reflex unique on our <a href="/" class="standard-link">home page</a>.</p>
         <hr class="h-1 rounded-full bg-gray-200 border-none my-12">
-      </div>
+      </section>
 
-      <section class="max-w-screen-xl px-8 sm:px-12">
+      <section>
         <h2 class="font-semibold text-3xl sm:text-4xl mb-4 mt-20">Try Reflex-FRP</h2>
         <p class="text-gray-500 md:text-lg mb-4">The Reflex ecosystem was created by developers, for developers, to provide a better way to build apps. No matter what you’re working on, it can benefit from Reflex. Here are a few ways to incorporate Reflex-FRP into your project:</p>
 
@@ -64,7 +64,7 @@
         <p class="body-copy">This is an easy way to become familiar with FRP concepts without worrying about servers or an application. Fast, simple, get started here with Reflex Platform.</p>
       </section>
 
-      <section class="max-w-screen-xl px-8 sm:px-12">
+      <section>
         <h2 class="font-semibold text-3xl sm:text-4xl mb-4 mt-20">Learn Reflex-FRP</h2>
         <p class="text-gray-500 md:text-lg mb-4">A functional understanding of Haskell is all that’s needed to begin learning Reflex-FRP. If you’d like more information on coding in Haskell, scroll down to ‘Haskell for Beginners’.</p>
 
