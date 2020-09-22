@@ -1,0 +1,34 @@
+  <!--
+  Mobile menu, show/hide based on mobile menu state.
+
+  Entering: "duration-200 ease-out"
+    From: "opacity-0 scale-95"
+    To: "opacity-100 scale-100"
+  Leaving: "duration-100 ease-in"
+    From: "opacity-100 scale-100"
+    To: "opacity-0 scale-95"
+  -->
+<div class="absolute z-10 top-0 right-0 w-full sm:w-1/2 transition md:hidden h-screen max-h-screen bg-gray-100 px-6 py-10 overflow-auto">
+  <button type="button" class="fixed top-0 right-0 mt-2 mr-2 flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-300 focus:outline-none focus:bg-gray-200 focus:text-gray-500 transition duration-150 ease-in-out">
+    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  <div class="mb-4">
+    <a href="/" aria-label="Reflex Home" class="absolute left-0">
+      <img class="h-3 w-auto" src="/media/logo.svg" alt="REFLEX">
+    </a>
+  </div>
+
+  <nav class="space-y-2">
+    <a href="/" class="block -ml-2 p-2 rounded text-gray-500 hover:bg-gray-200 hover:text-gray-800 transition ease-in-out duration-150">Home</a>
+    <a href="/get-started" class="block -ml-2 p-2 rounded text-gray-500 hover:bg-gray-200 hover:text-gray-800 transition ease-in-out duration-150">Get Started</a>
+    <a href="/tutorial" class="block -ml-2 p-2 rounded text-gray-500 hover:bg-gray-200 hover:text-gray-800 transition ease-in-out duration-150">Tutorial</a>
+    <a href="/resources" class="block -ml-2 p-2 rounded text-gray-500 hover:bg-gray-200 hover:text-gray-800 transition ease-in-out duration-150">Resources</a>
+  </nav>
+
+  {% block extras %}
+  {% endblock %}
+
+</div>
