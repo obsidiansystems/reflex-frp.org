@@ -1,0 +1,81 @@
+{% extends "boilerplate.njk" %}
+
+{% block extras %}
+  {% include "partials/mobile-nav/resources.njk" %}
+{% endblock %}
+
+{% block body %}
+
+  <div class="flex max-w-screen-xl">
+
+    <nav class="hidden lg:block w-1/4 flex-shrink-0 bg-gray-100 px-6 py-12">
+      <ul class="standard-links space-y-2">
+        <li><a href="" class="">Resources</a></li>
+        <li><a href="" class="">Guides</a></li>
+        <li><a href="" class="">Workshops</a></li>
+        <li><a href="" class="">Presentations</a></li>
+        <li><a href="" class="">Discussion Forums</a></li>
+        <li><a href="" class="">Downloads</a></li>
+        <li><a href="" class="">FRP Extras</a></li>
+      </ul>
+    </nav>
+
+    <div class="">
+      <div class="px-6 sm:px-12">
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl mb-8">Resources</h1>
+        <p class="text-gray-500 mb-4 md:text-lg">This page contains educational and informative resources on the Reflex FRP ecosystem, organised by topic and format.</p>
+        <hr class="h-1 rounded-full bg-gray-200 border-none my-12">
+      </div>
+
+      <section class="max-w-screen-xl px-8 sm:px-12">
+        <h2 class="font-semibold text-3xl sm:text-4xl mb-4 mt-20">Guides</h2>
+        <p class="text-gray-500 md:text-lg mb-4">These guides are a mixed bag - some API style documentation and some tutorial and walkthrough style resources.</p>
+
+        <h3 class="font-semibold text-lg sm:text-xl mb-2 mt-12"><a class="standard-link">Reflex-Dom quick(ish) reference guide</a></h3>
+        <p class="body-copy">A guide to typeclasses, widgets, and connecting to the real world.</p>
+
+        <h3 class="font-semibold text-lg sm:text-xl mb-2 mt-12"><a class="standard-link">A Beginner-friendly Reflex-DOM guide</a></h3>
+        <p class="body-copy">A back to basics explanation of FRP, and how to write GUI’s using Reflex.</p>
+      </section>
+
+      <section class="max-w-screen-xl px-8 sm:px-12">
+        <h2 class="font-semibold text-3xl sm:text-4xl mb-4 mt-20">Workshops</h2>
+
+        <h3 class="font-semibold text-xl sm:text-2xl mb-4 mt-12"></h3>
+        <p class="body-copy"></p>
+      </section>
+
+      <section class="max-w-screen-xl px-8 sm:px-12">
+        <h2 class="font-semibold text-3xl sm:text-4xl mb-4 mt-20">Presentations</h2>
+
+        <h3 class="font-semibold text-xl sm:text-2xl mb-4 mt-12"></h3>
+        <p class="body-copy"></p>
+      </section>
+
+      <section class="max-w-screen-xl px-8 sm:px-12">
+        <h2 class="font-semibold text-3xl sm:text-4xl mb-4 mt-20">Discussion Forums</h2>
+
+        <h3 class="font-semibold text-xl sm:text-2xl mb-4 mt-12"></h3>
+        <p class="body-copy"></p>
+      </section>
+
+      <section class="max-w-screen-xl px-8 sm:px-12">
+        <h2 class="font-semibold text-3xl sm:text-4xl mb-4 mt-20">Downloads</h2>
+
+        <h3 class="font-semibold text-xl sm:text-2xl mb-4 mt-12"></h3>
+        <p class="body-copy"></p>
+      </section>
+
+      <section class="max-w-screen-xl px-8 sm:px-12">
+        <h2 class="font-semibold text-3xl sm:text-4xl mb-4 mt-20">FRP Extras</h2>
+
+        <h3 class="font-semibold text-xl sm:text-2xl mb-4 mt-12"></h3>
+        <p class="body-copy"></p>
+      </section>
+
+      
+    </div>
+
+  </div>
+
+{% endblock %}
