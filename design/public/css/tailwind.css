@@ -2158,13 +2158,13 @@ video {
 
 /* Custom classes here */
 
-.standard-link {
+.standard-link, .standard-links * a {
   --text-opacity: 1;
   color: #6c2bd9;
   color: rgba(108, 43, 217, var(--text-opacity));
 }
 
-.standard-link:hover {
+.standard-link:hover, .standard-links * a:hover {
   --text-opacity: 1;
   color: #9061f9;
   color: rgba(144, 97, 249, var(--text-opacity));
@@ -2189,6 +2189,21 @@ video {
   --text-opacity: 1;
   color: #252f3f;
   color: rgba(37, 47, 63, var(--text-opacity));
+}
+
+p.body-copy {
+  --text-opacity: 1;
+  color: #374151;
+  color: rgba(55, 65, 81, var(--text-opacity));
+  line-height: 1.625;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  p.body-copy {
+    font-size: 1rem;
+  }
 }
 
 .space-y-0 > :not(template) ~ :not(template) {
