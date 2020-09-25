@@ -9,7 +9,7 @@
     "watch": "npm run watchcss & npm run watchhtml",
     "html": "gulp",
     "watchhtml": "onchange 'src/html/**' -- npm run html",
-    "css": "postcss src/css/tailwind.css -o public/css/tailwind.css",
+    "css": "postcss src/css/main.css -o public/css/main.css",
     "watchcss": "onchange 'src/css/**' 'postcss.config.js' 'tailwind.config.js'  -- npm run css"
   },
   "author": "Obsidian Systems, LLC",

@@ -1,0 +1,31 @@
+article h1 {
+	@apply font-display text-4xl mb-8;
+}
+
+article h2 {
+	@apply font-semibold text-3xl mb-4 mt-20;
+}
+
+article h3 {
+	@apply font-semibold text-xl mb-4 mt-12;
+}
+
+@screen sm {
+	article h1 {
+		@apply text-5xl;
+	}
+
+	article h2 {
+		@apply text-4xl;
+	}
+
+	article h3 {
+		@apply text-2xl;
+	}
+}
+
+@screen lg {
+	article h1 {
+		@apply text-6xl;
+	}
+}

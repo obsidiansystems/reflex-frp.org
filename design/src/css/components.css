@@ -1,0 +1,16 @@
+@import "./text/a.css";
+@import "./text/h.css";
+@import "./text/p.css";
+@import "./text/aside.css";
+@import "./text/code.css";
+@import "./text/hr.css";
+
+/* Custom classes here */
+
+.nav-link {
+	@apply p-2 rounded-md font-medium text-gray-500 transition ease-in-out duration-150;
+}
+
+.nav-link:hover {
+	@apply bg-gray-100 text-gray-800;
+}

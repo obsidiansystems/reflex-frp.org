@@ -6,21 +6,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap">
-  <link rel="stylesheet" href="/css/tailwind.css">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
-<body class="relative flex flex-col">
+<body class="relative">
 
+<!-- 
+'extras' block:
+Stuff can go here that is positioned independantly, like modals, slide-overs, tooptips, etc.
+Only stuff that is not in the document flow.
+-->
 {% block extras %}
 {% endblock %}
 
-{% include "partials/nav.njk" %}
 
-<div class="flex-grow">
-	{% block body %}
-	{% endblock %}
+<div class="min-h-screen flex flex-col">
+	{% include "partials/nav.njk" %}
+	
+	<div class="flex-grow">
+		{% block body %}
+		{% endblock %}
+	</div>
+	
+	{% include "partials/footer.njk" %}
 </div>
 
-{% include "partials/footer.njk" %}
 
 <script src="/js/prism.js" defer></script>
 

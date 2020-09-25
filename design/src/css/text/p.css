@@ -1,0 +1,18 @@
+/* Establish base style for paragraphs within articles */
+article p {
+	@apply text-gray-700 leading-relaxed text-sm mb-4;
+}
+
+article p.heading-paragraph {
+	@apply text-gray-500 mb-4;
+}
+
+@screen md {
+	article p {
+		@apply text-base;
+	}
+
+	article p.heading-paragraph {
+		@apply text-lg;
+	}
+}

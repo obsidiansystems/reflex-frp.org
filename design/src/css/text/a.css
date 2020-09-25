@@ -1,0 +1,7 @@
+article a, .standard-link, .standard-links a {
+	@apply text-purple-700;
+}
+
+article a:hover, .standard-link:hover, .standard-links a:hover {
+	@apply text-purple-500;
+}

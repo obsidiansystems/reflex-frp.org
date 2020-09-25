@@ -1,0 +1,3 @@
+article hr {
+	@apply h-1 rounded-full bg-gray-200 border-none my-12;
+}

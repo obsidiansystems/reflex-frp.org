@@ -1,0 +1,9 @@
+article aside {
+	@apply mx-4 my-8 pl-4 border-purple-700 border-l-3;
+}
+
+@screen sm {
+	article aside {
+		@apply mx-8;
+	}
+}
