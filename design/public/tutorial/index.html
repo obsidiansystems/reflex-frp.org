@@ -6,81 +6,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap">
-  <link rel="stylesheet" href="/css/tailwind.css">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
-<body class="relative flex flex-col">
+<body class="relative">
 
-
-    <!--
-  Mobile menu, show/hide based on mobile menu state.
-
-  Entering: "duration-200 ease-out"
-    From: "opacity-0 scale-95"
-    To: "opacity-100 scale-100"
-  Leaving: "duration-100 ease-in"
-    From: "opacity-100 scale-100"
-    To: "opacity-0 scale-95"
-  -->
-<div class="absolute z-10 top-0 right-0 w-full sm:w-1/2 transition md:hidden h-screen max-h-screen bg-gray-100 px-6 py-10 overflow-auto">
-  <button type="button" class="fixed top-0 right-0 mt-2 mr-2 flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-300 focus:outline-none focus:bg-gray-200 focus:text-gray-500 transition duration-150 ease-in-out">
-    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-    </svg>
-  </button>
-
-  <div class="mb-4">
-    <a href="/" aria-label="Reflex Home">
-      <img class="h-3 w-auto" src="/media/logo.svg" alt="REFLEX">
-    </a>
-  </div>
-
-  <nav class="space-y-2">
-    <a href="/" class="block -ml-2 p-2 rounded text-gray-500 hover:bg-gray-200 hover:text-gray-800 transition ease-in-out duration-150">Home</a>
-    <a href="/get-started" class="block -ml-2 p-2 rounded text-gray-500 hover:bg-gray-200 hover:text-gray-800 transition ease-in-out duration-150">Get Started</a>
-    <a href="/tutorial" class="block -ml-2 p-2 rounded text-gray-500 hover:bg-gray-200 hover:text-gray-800 transition ease-in-out duration-150">Tutorial</a>
-    <a href="/resources" class="block -ml-2 p-2 rounded text-gray-500 hover:bg-gray-200 hover:text-gray-800 transition ease-in-out duration-150">Resources</a>
-  </nav>
+<!-- 
+'extras' block:
+Stuff can go here that is positioned independantly, like modals, slide-overs, tooptips, etc.
+Only stuff that is not in the document flow.
+-->
 
   
-  <hr class="h-1 rounded-full bg-gray-200 border-none my-4">
-
-  <nav class="mt-6">
-    <div class="uppercase text-sm text-gray-600 font-semibold mb-4">On This Page</div>
-    <ul class="standard-links space-y-2">
-      <li><a href="" class="">Tutorial</a></li>
-      <li><a href="" class="">The structure of this document</a></li>
-      <li>
-        <ul class="ml-4 space-y-2">
-          <li><a href="" class="">Literate Haskell</a></li>
-          <li><a href="" class="">Running the code</a></li>
-          <li><a href="" class="">Navigating to particular tutorial snippets</a></li>
-          <li><a href="" class="">Imports and extensions</a></li>
-        </ul>
-      </li>
-      <li><a href="" class="">DOM Basics</a></li>
-      <li>
-        <ul class="ml-4 space-y-2">
-          <li><a href="" class="">Dynamics and Events</a></li>
-          <li><a href="" class="">A Number Input</a></li>
-          <li><a href="" class="">Adding</a></li>
-          <li><a href="" class="">Supporting Multiple Operations</a></li>
-          <li><a href="" class="">Events and State Machines</a></li>
-          <li><a href="" class="">Number Pad</a></li>
-          <li><a href="" class="">A Minimal Four Function Calculator</a></li>
-          <li><a href="" class="">Dynamic Attributes and Cyclic Dependencies</a></li>
-          <li><a href="" class=""></a></li>
-        </ul>
-      </li>
-      <li><a href="" class="">In Summary</a></li>
-    </ul>
-  </nav>
-
-
-</div>
 
 
 
-<div class="bg-white">
+<div class="min-h-screen flex flex-col">
+	<div class="bg-white">
   <div class="max-w-screen-xl mx-auto px-4 pt-4 sm:px-6">
     <nav class="relative h-20 flex justify-center items-center">
       
@@ -110,91 +51,79 @@
   </div>
 </div>
 
-
-<div class="flex-grow">
 	
+	<div class="flex-grow">
+		
 
-  <div class="flex max-w-screen-xl">
+<div class="flex max-w-screen-xl">
 
-    <nav class="hidden md:block w-1/4 flex-shrink-0 bg-gray-100 px-6 py-12">
-      <ul class="standard-links space-y-2">
-        <li><a href="" class="">Tutorial</a></li>
-        <li><a href="" class="">The structure of this document</a></li>
-        <li>
-          <ul class="ml-4 space-y-2">
-            <li><a href="" class="">Literate Haskell</a></li>
-            <li><a href="" class="">Running the code</a></li>
-            <li><a href="" class="">Navigating to particular tutorial snippets</a></li>
-            <li><a href="" class="">Imports and extensions</a></li>
-          </ul>
-        </li>
-        <li><a href="" class="">DOM Basics</a></li>
-        <li>
-          <ul class="ml-4 space-y-2">
-            <li><a href="" class="">Dynamics and Events</a></li>
-            <li><a href="" class="">A Number Input</a></li>
-            <li><a href="" class="">Adding</a></li>
-            <li><a href="" class="">Supporting Multiple Operations</a></li>
-            <li><a href="" class="">Events and State Machines</a></li>
-            <li><a href="" class="">Number Pad</a></li>
-            <li><a href="" class="">A Minimal Four Function Calculator</a></li>
-            <li><a href="" class="">Dynamic Attributes and Cyclic Dependencies</a></li>
-            <li><a href="" class=""></a></li>
-          </ul>
-        </li>
-        <li><a href="" class="">In Summary</a></li>
-      </ul>
-    </nav>
+  <nav class="hidden md:block w-1/4 flex-shrink-0 bg-gray-100 px-6 py-12">
+    <ul class="standard-links space-y-2">
+      <li><a href="">Tutorial</a></li>
+      <li><a href="">The structure of this document</a></li>
+      <li>
+        <ul class="ml-4 space-y-2">
+          <li><a href="">Literate Haskell</a></li>
+          <li><a href="">Running the code</a></li>
+          <li><a href="">Navigating to particular tutorial snippets</a></li>
+          <li><a href="">Imports and extensions</a></li>
+        </ul>
+      </li>
+      <li><a href="">DOM Basics</a></li>
+      <li>
+        <ul class="ml-4 space-y-2">
+          <li><a href="">Dynamics and Events</a></li>
+          <li><a href="">A Number Input</a></li>
+          <li><a href="">Adding</a></li>
+          <li><a href="">Supporting Multiple Operations</a></li>
+          <li><a href="">Events and State Machines</a></li>
+          <li><a href="">Number Pad</a></li>
+          <li><a href="">A Minimal Four Function Calculator</a></li>
+          <li><a href="">Dynamic Attributes and Cyclic Dependencies</a></li>
+          <li><a href=""></a></li>
+        </ul>
+      </li>
+      <li><a href="">In Summary</a></li>
+    </ul>
+  </nav>
 
-    <div class="px-6 sm:px-8 lg:px-12">
-      <section>
-        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl mb-8">Tutorial</h1>
-        <p class="text-gray-500 mb-4 md:text-lg">In this example, we'll be following Luite Stegemann's lead and building a simple functional reactive calculator to be used in a web browser or as a desktop or mobile app.</p>
-        <hr class="h-1 rounded-full bg-gray-200 border-none my-12">
-      </section>
+  <article class="px-6 sm:px-8 lg:px-12">
+    <h1>Tutorial</h1>
+    <p class="heading-paragraph">In this example, we'll be following Luite Stegemann's lead and building a simple functional reactive calculator to be used in a web browser or as a desktop or mobile app.</p>
+    
+    <hr>
 
-      <section class="standard-links">
-        <h2 class="font-semibold text-3xl sm:text-4xl mb-4 mt-20">The structure of this document</h2>
+    <h2>The structure of this document</h2>
 
-        <h3 class="font-semibold text-xl sm:text-2xl mb-4 mt-12">Literate Haskell</h3>
-        <p class="body-copy">This document is a <a href="">literate haskell</a> source file written in markdown. We're using <a href="">markdown-unlit</a> to process this source file and turn it into something our compiler can understand.</p>
+    <h3>Literate Haskell</h3>
+    <p>This document is a <a href="">literate haskell</a> source file written in markdown. We're using <a href="">markdown-unlit</a> to process this source file and turn it into something our compiler can understand.</p>
 
-        <h3 class="font-semibold text-xl sm:text-2xl mb-4 mt-12">Running the code</h3>
-        <p class="body-copy">You can run this tutorial by:</p>
-        <!-- <ol class="list-disc list ml-10 space-y-4"> -->
-          <!-- <li> -->
-            <p class="body-copy">
-              <span class="text text-xl">1.</span>
-              <a href="">Installing obelisk</a>, a framework and development tool for multi-platform Haskell applications.
-            </p>
-          <!-- </li> -->
-          <!-- <li> -->
-            <p class="body-copy">
-              Cloning the calculator-tutorial repository.
-            </p>
-            <pre class="mb-4"><code class="language-bash">git clone git@github.com:obsidiansystems/calculator-tutorial</code></pre>
-          <!-- </li> -->
-          <!-- <li> -->
-            <p class="body-copy">
-              Running the application with the ob command.
-            </p>
-            <pre class="mb-4"><code class="language-bash">cd calculator-tutorial
+    <h3>Running the code</h3>
+    <p>You can run this tutorial by:</p>
+    <p>
+      <span class="text text-xl">1.</span>
+      <a href="">Installing obelisk</a>, a framework and development tool for multi-platform Haskell applications.
+    </p>
+    <p>
+      Cloning the calculator-tutorial repository.
+    </p>
+    <pre class="mb-4"><code class="language-bash">git clone git@github.com:obsidiansystems/calculator-tutorial</code></pre>
+    <p>
+      Running the application with the ob command.
+    </p>
+    <pre class="mb-4"><code class="language-bash">cd calculator-tutorial
 ob run</code></pre>
-          <!-- </li> -->
-          <!-- <li> -->
-            <p class="body-copy">
-              Navigating to <a href="">http://localhost:8000</a>. If you want to run it at a different hostname or port, modify the <code class="inline-code">config/common/route</code> configuration file.
-            </p>
-          <!-- </li> -->
-        <!-- </ol> -->
+    <p>
+      Navigating to <a href="">http://localhost:8000</a>. If you want to run it at a different hostname or port, modify the <code>config/common/route</code> configuration file.
+    </p>
 
-        <h3 class="font-semibold text-xl sm:text-2xl mb-4 mt-12">Navigating to particular tutorial snippets</h3>
-        <p class="body-copy">Over the course of this tutorial, we're going to progressively build a calculator application. Each step in the process of constructing the calculator will be a numbered function in this document. For example, the first function is <code class="inline-code">tutorial1</code>, below.</p>
-        <p class="body-copy">To see what the code in <code class="inline-code">tutorial1</code> does when it runs, you can navigate to <code class="inline-code">/tutorial/1</code>. The same applies to any other numbered function: just change the number at the end of the url to match that of the function you'd like to see in action.</p>
+    <h3>Navigating to particular tutorial snippets</h3>
+    <p>Over the course of this tutorial, we're going to progressively build a calculator application. Each step in the process of constructing the calculator will be a numbered function in this document. For example, the first function is <code>tutorial1</code>, below.</p>
+    <p>To see what the code in <code>tutorial1</code> does when it runs, you can navigate to <code>/tutorial/1</code>. The same applies to any other numbered function: just change the number at the end of the url to match that of the function you'd like to see in action.</p>
 
-        <h3 class="font-semibold text-xl sm:text-2xl mb-4 mt-12">Imports and extensions</h3>
-        <p class="body-copy">Because this is one big source file, all of our functions will share a set of imports and language extensions, declared here:</p>
-        <pre class="mb-4"><code class="language-haskell">{-# LANGUAGE OverloadedStrings #-}
+    <h3>Imports and extensions</h3>
+    <p>Because this is one big source file, all of our functions will share a set of imports and language extensions, declared here:</p>
+    <pre class="mb-4"><code class="language-haskell">{-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE RecursiveDo #-}
 {-# LANGUAGE ScopedTypeVariables #-}
 
@@ -209,31 +138,27 @@ import qualified Data.Text as T
 import Text.Read (readMaybe)
 import Control.Applicative ((<*>), (<$>))
 import Control.Monad.Fix (MonadFix)</code></pre>
-        <p class="body-copy">That's all for the preliminaries. Let's get to it!</p>
-      </section>
+    <p>That's all for the preliminaries. Let's get to it!</p>
 
-      <section>
-        <h2 class="font-semibold text-3xl sm:text-4xl mb-4 mt-20">DOM Basics</h2>
-        <h3 class="font-semibold text-xl sm:text-2xl mb-4 mt-12">Reflex-FRP Basics</h3>
-        <p class="body-copy">Existing content...</p>
+    <h2>DOM Basics</h2>
+    <h3>Reflex-FRP Basics</h3>
+    <p>Existing content...</p>
 
-        <aside class="mx-4 sm:mx-8 my-8 pl-4 border-purple-700 border-l-3">
-          <p class="font-bold body-copy">Sidebar: Interpreting the MonadWidget type</p>
-          <p class="body-copy">FRP-enabled datatypes in Reflex take an argument t, which identifies the FRP subsystem being used. This ensures that wires don't get crossed if a single program uses Reflex in multiple different contexts. You can think of t as identifying a particular "timeline" of the FRP system.</p>
-          <p class="body-copy">Because most simple programs will only deal with a single timeline, we won't revisit the t parameters in this tutorial. As long as you make sure your <span class="inline-code">Event</span>, <span class="inline-code">Behavior</span>, and <span class="inline-code">Dynamic</span> values all get their t argument, it'll work itself out.</p>
-        </aside>
+    <aside>
+      <p class="font-bold">Sidebar: Interpreting the MonadWidget type</p>
+      <p>FRP-enabled datatypes in Reflex take an argument t, which identifies the FRP subsystem being used. This ensures that wires don't get crossed if a single program uses Reflex in multiple different contexts. You can think of t as identifying a particular "timeline" of the FRP system.</p>
+      <p>Because most simple programs will only deal with a single timeline, we won't revisit the t parameters in this tutorial. As long as you make sure your <code>Event</code>, <code>Behavior</code>, and <code>Dynamic</code> values all get their t argument, it'll work itself out.</p>
+    </aside>
 
-        <p class="body-copy">In our example, <span class="inline-code">el "div" $ text "Welcome to Reflex"</span>, the first argument to el was "div", indicating that we are going to produce a div element.</p>
-
-      </section>
-    </div>
-
-  </div>
-
+    <p>In our example, <code>el "div" $ text "Welcome to Reflex"</code>, the first argument to el was "div", indicating that we are going to produce a div element.</p>
+  </article>
 
 </div>
 
-<div class="bg-gray-100 mt-24">
+
+	</div>
+	
+	<footer class="bg-gray-100 mt-24">
 	<div class="max-w-screen-xl mx-auto px-8 py-16">
 
 		<div class="flex mb-8 pb-8 border-b border-gray-200">
@@ -243,26 +168,28 @@ import Control.Monad.Fix (MonadFix)</code></pre>
 			<a href="#" class="icon-twitter text-2xl"></a>
 		</div>
 
-		<div class="grid gap-8 sm:flex">
+		<div class="grid gap-8 sm:flex standard-links">
 			<div class="mr-24">
 			    <h5 class="font-semibold uppercase text-gray-600 mb-2">Ecosystem</h5>
 			    <ul class="leading-loose text-lg">
-			    	<li><a href="/" class="standard-link">Home</a></li>
-			    	<li><a href="/get-started" class="standard-link">Get Started</a></li>
-			    	<li><a href="/resources" class="standard-link">Resources</a></li>
+			    	<li><a href="/">Home</a></li>
+			    	<li><a href="/get-started">Get Started</a></li>
+			    	<li><a href="/resources">Resources</a></li>
 			    </ul>
 			</div>
 
 			<div>
 				<h5 class="font-semibold uppercase text-gray-600 mb-2">Community</h5>
 				<ul class="leading-loose text-lg">
-					<li><a href="" class="standard-link">Reddit</a></li>
-					<li><a href="" class="standard-link">#reflex-frp on IRC</a></li>
+					<li><a href="">Reddit</a></li>
+					<li><a href="">#reflex-frp on IRC</a></li>
 				</ul>
 			</div>
 		</div>
 
 	</div>
+</footer>
+
 </div>
 
 

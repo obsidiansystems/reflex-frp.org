@@ -6,63 +6,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap">
-  <link rel="stylesheet" href="/css/tailwind.css">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
-<body class="relative flex flex-col">
+<body class="relative">
 
-
-    <!--
-  Mobile menu, show/hide based on mobile menu state.
-
-  Entering: "duration-200 ease-out"
-    From: "opacity-0 scale-95"
-    To: "opacity-100 scale-100"
-  Leaving: "duration-100 ease-in"
-    From: "opacity-100 scale-100"
-    To: "opacity-0 scale-95"
-  -->
-<div class="absolute z-10 top-0 right-0 w-full sm:w-1/2 transition md:hidden h-screen max-h-screen bg-gray-100 px-6 py-10 overflow-auto">
-  <button type="button" class="fixed top-0 right-0 mt-2 mr-2 flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-300 focus:outline-none focus:bg-gray-200 focus:text-gray-500 transition duration-150 ease-in-out">
-    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-    </svg>
-  </button>
-
-  <div class="mb-4">
-    <a href="/" aria-label="Reflex Home">
-      <img class="h-3 w-auto" src="/media/logo.svg" alt="REFLEX">
-    </a>
-  </div>
-
-  <nav class="space-y-2">
-    <a href="/" class="block -ml-2 p-2 rounded text-gray-500 hover:bg-gray-200 hover:text-gray-800 transition ease-in-out duration-150">Home</a>
-    <a href="/get-started" class="block -ml-2 p-2 rounded text-gray-500 hover:bg-gray-200 hover:text-gray-800 transition ease-in-out duration-150">Get Started</a>
-    <a href="/tutorial" class="block -ml-2 p-2 rounded text-gray-500 hover:bg-gray-200 hover:text-gray-800 transition ease-in-out duration-150">Tutorial</a>
-    <a href="/resources" class="block -ml-2 p-2 rounded text-gray-500 hover:bg-gray-200 hover:text-gray-800 transition ease-in-out duration-150">Resources</a>
-  </nav>
+<!-- 
+'extras' block:
+Stuff can go here that is positioned independantly, like modals, slide-overs, tooptips, etc.
+Only stuff that is not in the document flow.
+-->
 
   
-  <hr class="h-1 rounded-full bg-gray-200 border-none my-4">
-
-  <nav class="mt-6">
-    <div class="uppercase text-sm text-gray-600 font-semibold mb-4">On This Page</div>
-    <ul class="standard-links space-y-2">
-      <li><a href="" class="">Resources</a></li>
-      <li><a href="" class="">Guides</a></li>
-      <li><a href="" class="">Workshops</a></li>
-      <li><a href="" class="">Presentations</a></li>
-      <li><a href="" class="">Discussion Forums</a></li>
-      <li><a href="" class="">Downloads</a></li>
-      <li><a href="" class="">FRP Extras</a></li>
-    </ul>
-  </nav>
-
-
-</div>
 
 
 
-<div class="bg-white">
+<div class="min-h-screen flex flex-col">
+	<div class="bg-white">
   <div class="max-w-screen-xl mx-auto px-4 pt-4 sm:px-6">
     <nav class="relative h-20 flex justify-center items-center">
       
@@ -92,86 +51,71 @@
   </div>
 </div>
 
-
-<div class="flex-grow">
 	
+	<div class="flex-grow">
+		
 
-  <div class="flex max-w-screen-xl">
+<div class="flex max-w-screen-xl">
 
-    <nav class="hidden lg:block w-1/4 flex-shrink-0 bg-gray-100 px-6 py-12">
-      <ul class="standard-links space-y-2">
-        <li><a href="" class="">Resources</a></li>
-        <li><a href="" class="">Guides</a></li>
-        <li><a href="" class="">Workshops</a></li>
-        <li><a href="" class="">Presentations</a></li>
-        <li><a href="" class="">Discussion Forums</a></li>
-        <li><a href="" class="">Downloads</a></li>
-        <li><a href="" class="">FRP Extras</a></li>
-      </ul>
-    </nav>
+  <nav class="hidden lg:block w-1/4 flex-shrink-0 bg-gray-100 px-6 py-12">
+    <ul class="standard-links space-y-2">
+      <li><a href="">Resources</a></li>
+      <li><a href="">Guides</a></li>
+      <li><a href="">Workshops</a></li>
+      <li><a href="">Presentations</a></li>
+      <li><a href="">Discussion Forums</a></li>
+      <li><a href="">Downloads</a></li>
+      <li><a href="">FRP Extras</a></li>
+    </ul>
+  </nav>
 
-    <div class="">
-      <div class="px-6 sm:px-12">
-        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl mb-8">Resources</h1>
-        <p class="text-gray-500 mb-4 md:text-lg">This page contains educational and informative resources on the Reflex FRP ecosystem, organised by topic and format.</p>
-        <hr class="h-1 rounded-full bg-gray-200 border-none my-12">
-      </div>
+  <article class="px-6 sm:px-8 lg:px-12">
+    <h1>Resources</h1>
+    <p class="heading-paragraph">This page contains educational and informative resources on the Reflex FRP ecosystem, organised by topic and format.</p>
+    
+    <hr>
 
-      <section class="max-w-screen-xl px-8 sm:px-12">
-        <h2 class="font-semibold text-3xl sm:text-4xl mb-4 mt-20">Guides</h2>
-        <p class="text-gray-500 md:text-lg mb-4">These guides are a mixed bag - some API style documentation and some tutorial and walkthrough style resources.</p>
+    <h2>Guides</h2>
+    <p class="heading-paragraph">These guides are a mixed bag - some API style documentation and some tutorial and walkthrough style resources.</p>
 
-        <h3 class="font-semibold text-lg sm:text-xl mb-2 mt-12"><a class="standard-link">Reflex-Dom quick(ish) reference guide</a></h3>
-        <p class="body-copy">A guide to typeclasses, widgets, and connecting to the real world.</p>
+    <h3><a>Reflex-Dom quick(ish) reference guide</a></h3>
+    <p>A guide to typeclasses, widgets, and connecting to the real world.</p>
 
-        <h3 class="font-semibold text-lg sm:text-xl mb-2 mt-12"><a class="standard-link">A Beginner-friendly Reflex-DOM guide</a></h3>
-        <p class="body-copy">A back to basics explanation of FRP, and how to write GUI’s using Reflex.</p>
-      </section>
+    <h3><a>A Beginner-friendly Reflex-DOM guide</a></h3>
+    <p>A back to basics explanation of FRP, and how to write GUI’s using Reflex.</p>
 
-      <section class="max-w-screen-xl px-8 sm:px-12">
-        <h2 class="font-semibold text-3xl sm:text-4xl mb-4 mt-20">Workshops</h2>
+    <h2>Workshops</h2>
 
-        <h3 class="font-semibold text-xl sm:text-2xl mb-4 mt-12"></h3>
-        <p class="body-copy"></p>
-      </section>
+    <h3></h3>
+    <p></p>
 
-      <section class="max-w-screen-xl px-8 sm:px-12">
-        <h2 class="font-semibold text-3xl sm:text-4xl mb-4 mt-20">Presentations</h2>
+    <h2>Presentations</h2>
 
-        <h3 class="font-semibold text-xl sm:text-2xl mb-4 mt-12"></h3>
-        <p class="body-copy"></p>
-      </section>
+    <h3></h3>
+    <p></p>
 
-      <section class="max-w-screen-xl px-8 sm:px-12">
-        <h2 class="font-semibold text-3xl sm:text-4xl mb-4 mt-20">Discussion Forums</h2>
+    <h2>Discussion Forums</h2>
 
-        <h3 class="font-semibold text-xl sm:text-2xl mb-4 mt-12"></h3>
-        <p class="body-copy"></p>
-      </section>
+    <h3></h3>
+    <p></p>
 
-      <section class="max-w-screen-xl px-8 sm:px-12">
-        <h2 class="font-semibold text-3xl sm:text-4xl mb-4 mt-20">Downloads</h2>
+    <h2>Downloads</h2>
 
-        <h3 class="font-semibold text-xl sm:text-2xl mb-4 mt-12"></h3>
-        <p class="body-copy"></p>
-      </section>
+    <h3></h3>
+    <p></p>
 
-      <section class="max-w-screen-xl px-8 sm:px-12">
-        <h2 class="font-semibold text-3xl sm:text-4xl mb-4 mt-20">FRP Extras</h2>
+    <h2>FRP Extras</h2>
 
-        <h3 class="font-semibold text-xl sm:text-2xl mb-4 mt-12"></h3>
-        <p class="body-copy"></p>
-      </section>
-
-      
-    </div>
-
-  </div>
-
+    <h3></h3>
+    <p></p>
+  </article>
 
 </div>
 
-<div class="bg-gray-100 mt-24">
+
+	</div>
+	
+	<footer class="bg-gray-100 mt-24">
 	<div class="max-w-screen-xl mx-auto px-8 py-16">
 
 		<div class="flex mb-8 pb-8 border-b border-gray-200">
@@ -181,26 +125,28 @@
 			<a href="#" class="icon-twitter text-2xl"></a>
 		</div>
 
-		<div class="grid gap-8 sm:flex">
+		<div class="grid gap-8 sm:flex standard-links">
 			<div class="mr-24">
 			    <h5 class="font-semibold uppercase text-gray-600 mb-2">Ecosystem</h5>
 			    <ul class="leading-loose text-lg">
-			    	<li><a href="/" class="standard-link">Home</a></li>
-			    	<li><a href="/get-started" class="standard-link">Get Started</a></li>
-			    	<li><a href="/resources" class="standard-link">Resources</a></li>
+			    	<li><a href="/">Home</a></li>
+			    	<li><a href="/get-started">Get Started</a></li>
+			    	<li><a href="/resources">Resources</a></li>
 			    </ul>
 			</div>
 
 			<div>
 				<h5 class="font-semibold uppercase text-gray-600 mb-2">Community</h5>
 				<ul class="leading-loose text-lg">
-					<li><a href="" class="standard-link">Reddit</a></li>
-					<li><a href="" class="standard-link">#reflex-frp on IRC</a></li>
+					<li><a href="">Reddit</a></li>
+					<li><a href="">#reflex-frp on IRC</a></li>
 				</ul>
 			</div>
 		</div>
 
 	</div>
+</footer>
+
 </div>
 
 

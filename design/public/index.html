@@ -6,14 +6,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap">
-  <link rel="stylesheet" href="/css/tailwind.css">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
-<body class="relative flex flex-col">
+<body class="relative">
+
+<!-- 
+'extras' block:
+Stuff can go here that is positioned independantly, like modals, slide-overs, tooptips, etc.
+Only stuff that is not in the document flow.
+-->
 
 
 
 
-<div class="bg-white">
+<div class="min-h-screen flex flex-col">
+	<div class="bg-white">
   <div class="max-w-screen-xl mx-auto px-4 pt-4 sm:px-6">
     <nav class="relative h-20 flex justify-center items-center">
       
@@ -43,9 +50,9 @@
   </div>
 </div>
 
-
-<div class="flex-grow">
 	
+	<div class="flex-grow">
+		
 
   <div class="max-w-screen-xl mx-auto h-screen max-h-140 flex justify-center items-center flex-col -mt-20 px-6 sm:px-12 lg:mt-0 xl:mb-16">
     <h1 class="font-display text-center text-4xl sm:text-5xl lg:text-6xl mb-8 sm:mb-16 lg:w-3/4">The world changes, your apps should keep up.</h1>
@@ -136,9 +143,9 @@
   </div>
 
 
-</div>
-
-<div class="bg-gray-100 mt-24">
+	</div>
+	
+	<footer class="bg-gray-100 mt-24">
 	<div class="max-w-screen-xl mx-auto px-8 py-16">
 
 		<div class="flex mb-8 pb-8 border-b border-gray-200">
@@ -148,26 +155,28 @@
 			<a href="#" class="icon-twitter text-2xl"></a>
 		</div>
 
-		<div class="grid gap-8 sm:flex">
+		<div class="grid gap-8 sm:flex standard-links">
 			<div class="mr-24">
 			    <h5 class="font-semibold uppercase text-gray-600 mb-2">Ecosystem</h5>
 			    <ul class="leading-loose text-lg">
-			    	<li><a href="/" class="standard-link">Home</a></li>
-			    	<li><a href="/get-started" class="standard-link">Get Started</a></li>
-			    	<li><a href="/resources" class="standard-link">Resources</a></li>
+			    	<li><a href="/">Home</a></li>
+			    	<li><a href="/get-started">Get Started</a></li>
+			    	<li><a href="/resources">Resources</a></li>
 			    </ul>
 			</div>
 
 			<div>
 				<h5 class="font-semibold uppercase text-gray-600 mb-2">Community</h5>
 				<ul class="leading-loose text-lg">
-					<li><a href="" class="standard-link">Reddit</a></li>
-					<li><a href="" class="standard-link">#reflex-frp on IRC</a></li>
+					<li><a href="">Reddit</a></li>
+					<li><a href="">#reflex-frp on IRC</a></li>
 				</ul>
 			</div>
 		</div>
 
 	</div>
+</footer>
+
 </div>
 
 
